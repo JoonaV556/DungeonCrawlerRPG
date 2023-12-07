@@ -8,7 +8,6 @@ public class DealDamage : MonoBehaviour {
     /// <summary>
     /// How much damage is dealt to the health component of the other object when hit (if the object has one)
     /// </summary>
-    /// <param name="collision"></param>
     [SerializeField]
     private float DamageToDeal = 100f;
 
