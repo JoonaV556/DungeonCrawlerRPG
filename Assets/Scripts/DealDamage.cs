@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DealDamage : MonoBehaviour {
+    // Attach to 2d colliders which should deal damage when something hits them (weapon attack colliders etc.)
+    
+    /// <summary>
+    /// How much damage is dealt to the health component of the other object when hit (if the object has one)
+    /// </summary>
+    /// <param name="collision"></param>
+    [SerializeField]
+    private float DamageToDeal = 100f;
+
+    // Debug
+    // private List<GameObject> HitObjects = new List<GameObject>();
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        // Deal damage to the other object if it has a Health component
+
+        // Debug
+        // print("Hit other object");
+        // HitObjects.Add(collision.gameObject);
+
+        Health otherObjHealth = collision.gameObject.GetComponent<Health>();
+        if (otherObjHealth != null) {
+            otherObjHealth.TakeDamage(DamageToDeal);
+            // Debug
+            // print("Dealt damage");
+        }
+    }
+}
