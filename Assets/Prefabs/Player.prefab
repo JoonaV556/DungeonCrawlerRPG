@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2420764915487565636}
   - component: {fileID: 4801694259876343859}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpriteSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 336076573797497898}
   - component: {fileID: 1425509519384032334}
   - component: {fileID: 8631643343086163280}
+  - component: {fileID: 8846306113388573072}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -402,6 +403,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+--- !u!114 &8846306113388573072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761813104519713412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717b42c26feec534c9a64ccabfc2780a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6342549605369414862
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +427,7 @@ GameObject:
   - component: {fileID: 8041275980613599279}
   - component: {fileID: 8256655077255499468}
   - component: {fileID: 7253351389078341197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AttackSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
