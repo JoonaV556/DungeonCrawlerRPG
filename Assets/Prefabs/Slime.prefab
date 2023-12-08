@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8122147744702071729}
   - component: {fileID: 2279953535340161297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tilemap_packed_63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7296865507174691801}
   - component: {fileID: 1395340269918860170}
   - component: {fileID: 1740880378655327292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,3 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b625abc0ba91e46937a7c5c750da0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VisibilityCheckFrequency: 0.2
+  VisibilityLayerMask:
+    serializedVersion: 2
+    m_Bits: 243
+  VisibilityCheckOrigin: {fileID: 8122147744702071729}
