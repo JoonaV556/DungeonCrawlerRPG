@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4097461375841251056}
   - component: {fileID: 5762099421792695910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpritePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 336076573797497898}
   - component: {fileID: 1425509519384032334}
   - component: {fileID: 8631643343086163280}
-  - component: {fileID: 8846306113388573072}
+  - component: {fileID: 2542139189655021123}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -359,19 +359,19 @@ MonoBehaviour:
   Rigidbody: {fileID: 3436295021676354922}
   ContactFilter:
     useTriggers: 0
-    useLayerMask: 1
+    useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  collisionOffset: 0
+  collisionOffset: 0.01
 --- !u!114 &1425509519384032334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
---- !u!114 &8846306113388573072
+--- !u!114 &2542139189655021123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717b42c26feec534c9a64ccabfc2780a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VisualTransform: {fileID: 4097461375841251056}
 --- !u!1 &6342549605369414862
 GameObject:
   m_ObjectHideFlags: 0

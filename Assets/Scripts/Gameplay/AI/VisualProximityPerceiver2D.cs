@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class VisualProximityPerceiver2D : Perceiver {
@@ -60,13 +61,10 @@ public class VisualProximityPerceiver2D : Perceiver {
         foreach (Perceivable perc in perceivablesInProximity) {
             Transform percTransform = perc.transform;
             // Calculate vector facing towards target
-            Vector3 TargetVector = percTransform.position - VisibilityCheckOrigin.position;
+            Vector3 TargetVector = perc.VisualTransform.position - VisibilityCheckOrigin.position;
             // Do raycast
             RaycastHit2D HitResult = Physics2D.Raycast(RaycastOrigin, TargetVector, Mathf.Infinity, VisibilityLayerMask);
             Debug.DrawRay(RaycastOrigin, TargetVector, Color.green, 0.3f, false);
-
-            print(HitResult.collider.gameObject.name);
-
             bool CanSeeTarget = HitResult.transform == percTransform;
             bool IsTargetAlreadyPerceived = PerceivedTargets.Contains(perc);
             // Prepare new targets if they can be seen
@@ -79,12 +77,8 @@ public class VisualProximityPerceiver2D : Perceiver {
             }
         }
         // Add new targets
-        foreach (Perceivable perc in PerceivablesToAdd) {
-            PerceivedTargets.Add(perc);
-        }
+        PerceivedTargets = PerceivedTargets.Union(PerceivablesToAdd).ToList();
         // Remove old targets
-        foreach (Perceivable perc in PerceivablesToRemove) {
-            PerceivedTargets.Remove(perc);
-        }
+        PerceivedTargets = PerceivedTargets.Except(PerceivablesToRemove).ToList();
     }
 }
