@@ -94,11 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4454970207691564665}
   - component: {fileID: 2944442358254087541}
+  - component: {fileID: 1395340269918860170}
   - component: {fileID: 896883132903724535}
   - component: {fileID: 7296865507174691801}
-  - component: {fileID: 1395340269918860170}
-  - component: {fileID: 1740880378655327292}
   - component: {fileID: 5752182627796456634}
+  - component: {fileID: 1740880378655327292}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -167,32 +167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1509742, y: 0.02583291}
   m_EdgeRadius: 0
---- !u!114 &896883132903724535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073495828575695335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56003860f2d2a1b4991e524663f7fe01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageToDeal: 5
---- !u!114 &7296865507174691801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073495828575695335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ecfb108ad23ed4698ea935338270a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 10
 --- !u!58 &1395340269918860170
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -228,6 +202,45 @@ CircleCollider2D:
   m_Offset: {x: 0.08, y: 0.06}
   serializedVersion: 2
   m_Radius: 0.59
+--- !u!114 &896883132903724535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073495828575695335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56003860f2d2a1b4991e524663f7fe01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToDeal: 5
+--- !u!114 &7296865507174691801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073495828575695335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ecfb108ad23ed4698ea935338270a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+--- !u!114 &5752182627796456634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073495828575695335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717b42c26feec534c9a64ccabfc2780a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VisualTransform: {fileID: 8122147744702071729}
 --- !u!114 &1740880378655327292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,16 +258,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 243
   VisibilityCheckOrigin: {fileID: 8122147744702071729}
---- !u!114 &5752182627796456634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073495828575695335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717b42c26feec534c9a64ccabfc2780a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VisualTransform: {fileID: 8122147744702071729}
+  TargetLossTimer: 10

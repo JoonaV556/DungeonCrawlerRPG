@@ -18,9 +18,16 @@ public class VisualProximityPerceiver2D : Perceiver {
     private LayerMask VisibilityLayerMask;
     [SerializeField]
     private Transform VisibilityCheckOrigin;
+    /// <summary>
+    /// How many seconds needs to pass before target is removed from the perceived targets list, if the target has exited out of sight
+    /// </summary>
+    [SerializeField]
+    private float TargetLossTimer = 5f;
 
-    float elapsedTime = 0f;
-    private List<Perceivable> perceivablesInProximity = new List<Perceivable>();
+    private float currentTime = 0f;
+    private float elapsedTime = 0f;
+    private List<Perceivable> perceivablesInProximity = new();
+    private List<LostSightPerceivable> LostSightPerceivables = new();
 
     void OnTriggerEnter2D(Collider2D otherCollider) {
         // Add perceivables which have entered proximity
@@ -33,17 +40,29 @@ public class VisualProximityPerceiver2D : Perceiver {
     void OnTriggerExit2D(Collider2D otherCollider) {
         // Remove perceivables which are no longer in proximity
         Perceivable perceivable = otherCollider.gameObject.GetComponent<Perceivable>();
-        if (perceivable != null) {
-            if (perceivablesInProximity.Contains(perceivable)) {
-                perceivablesInProximity.Remove(perceivable);
-            }
-            if (PerceivedTargets.Contains(perceivable)) {
-                PerceivedTargets.Remove(perceivable);
+        if (perceivable == null) { return; }
+        // Remove perceivable from visual checks
+        if (perceivablesInProximity.Contains(perceivable)) {
+            perceivablesInProximity.Remove(perceivable);
+        }
+        // Start removal cooldown
+        if (PerceivedTargets.Contains(perceivable)) {
+            // Check if target is already waiting to be removed
+            bool IsTargetAlreadyUpForRemoval = IsTargetWaitingForRemoval(perceivable);
+            // If target is not already to be removed, prepare it for removal
+            if (!IsTargetAlreadyUpForRemoval) {
+                LostSightPerceivable percToAdd = new LostSightPerceivable();
+                percToAdd.Target = perceivable;
+                // Set the time in future when the target should be forgotten, if visual sight is not regained
+                percToAdd.TimeOfRemoval = Time.time + TargetLossTimer;
+                // Add the perceivable to be tracked
+                LostSightPerceivables.Add(percToAdd);
             }
         }
     }
 
     private void Update() {
+        // Do visibility checks at specific interval
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= VisibilityCheckFrequency) {
             elapsedTime = 0f;
@@ -73,12 +92,57 @@ public class VisualProximityPerceiver2D : Perceiver {
             }
             // Prepare old targets for removal if they cannot be seen
             if (IsTargetAlreadyPerceived && !CanSeeTarget) {
-                PerceivablesToRemove.Add(perc);
+                // Check if target is already waiting to be removed
+                bool IsTargetAlreadyUpForRemoval = IsTargetWaitingForRemoval(perc);
+                // If target is not already to be removed, prepare it for removal
+                if (!IsTargetAlreadyUpForRemoval) {
+                    LostSightPerceivable percToAdd = new LostSightPerceivable();
+                    percToAdd.Target = perc;
+                    // Set the time in future when the target should be forgotten, if visual sight is not regained
+                    percToAdd.TimeOfRemoval = Time.time + TargetLossTimer;
+                    // Add the perceivable to be tracked
+                    LostSightPerceivables.Add(percToAdd);
+                }
             }
         }
-        // Add new targets
-        PerceivedTargets = PerceivedTargets.Union(PerceivablesToAdd).ToList();
+        // Set perceived targets to be removed if they have been out of sight for long enough
+        List<LostSightPerceivable> lsPercsToRemove = new();
+        if (LostSightPerceivables.Count >= 0) {
+            foreach (LostSightPerceivable lsPerc in LostSightPerceivables) {
+                if (Time.time >= lsPerc.TimeOfRemoval) {
+                    lsPercsToRemove.Add(lsPerc);
+                    PerceivablesToRemove.Add(lsPerc.Target);                   
+                }
+            }
+        }
+
+
+        // Remove tracked lsPercs on cooldown
+        LostSightPerceivables = LostSightPerceivables.Except(lsPercsToRemove).ToList();
         // Remove old targets
         PerceivedTargets = PerceivedTargets.Except(PerceivablesToRemove).ToList();
+        // Add new targets to perceived
+        PerceivedTargets = PerceivedTargets.Union(PerceivablesToAdd).ToList();
+
+        // Debug
+        currentTime = Time.time;
+    }
+
+    private bool IsTargetWaitingForRemoval(Perceivable perc) {
+        // Check if the target is already up for removal
+        foreach (LostSightPerceivable lsPerc in LostSightPerceivables) {
+            if (lsPerc.Target == perc) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// A Perceivable target of which the perceiver has lost sight of. Will be removed from PerceivedTargets if sight is not regained before removal time
+    /// </summary>
+    protected class LostSightPerceivable {
+        public Perceivable Target; // The target which is tracked
+        public float TimeOfRemoval; // The point of time in future, at which the target will be removed if visual sight is not regained
     }
 }
