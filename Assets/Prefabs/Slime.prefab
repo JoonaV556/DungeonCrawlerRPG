@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2182047752692727330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.029, z: 0}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1740880378655327292}
   - component: {fileID: 5641378733848699107}
   - component: {fileID: 4327856101220365679}
-  - component: {fileID: 3746729102222580796}
+  - component: {fileID: 1436501913431110906}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -157,7 +157,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08066073, y: 0.029230176}
+  m_Offset: {x: 0, y: -0.04}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -168,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1509742, y: 0.02583291}
+  m_Size: {x: 0.14, y: 0.03}
   m_EdgeRadius: 0
 --- !u!58 &1395340269918860170
 CircleCollider2D:
@@ -202,9 +202,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08, y: 0.06}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.59
+  m_Radius: 0.5
 --- !u!114 &896883132903724535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,12 +256,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b625abc0ba91e46937a7c5c750da0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PerceivedTargets: []
   VisibilityCheckFrequency: 0.2
   VisibilityLayerMask:
     serializedVersion: 2
-    m_Bits: 243
+    m_Bits: 251
+  VisibilityFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   VisibilityCheckOrigin: {fileID: 8122147744702071729}
-  TargetLossTimer: 10
+  ForgetDuration: 2
 --- !u!114 &5641378733848699107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +304,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: -2
 --- !u!114 &4327856101220365679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,19 +318,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
-  height: 2
+  radius: 0.08
+  height: 1
   canMove: 1
-  maxSpeed: 1
-  gravity: {x: NaN, y: NaN, z: NaN}
+  maxSpeed: 0.2
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
-  enableRotation: 1
+  orientation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     period: 0.5
@@ -332,7 +347,7 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &3746729102222580796
+--- !u!114 &1436501913431110906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,17 +356,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4073495828575695335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
+  m_Script: {fileID: 11500000, guid: cff473ccb76068a45ac1f82201ece387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
-  useRaycasting: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  thickRaycast: 0
-  thickRaycastRadius: 0
-  use2DPhysics: 0
-  raycastOffset: {x: 0, y: 0, z: 0}
-  useGraphRaycasting: 1
-  quality: 1
+  AIPath: {fileID: 4327856101220365679}
+  SlimePerceiver: {fileID: 1740880378655327292}

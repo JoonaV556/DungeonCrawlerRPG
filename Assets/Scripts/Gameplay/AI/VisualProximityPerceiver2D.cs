@@ -15,22 +15,23 @@ public class VisualProximityPerceiver2D : Perceiver {
     /// </summary>
     [SerializeField]
     private float VisibilityCheckFrequency = 0.2f;
-    [SerializeField]
+    [SerializeField, Tooltip("Which layers are included when doing visual check raycasts")]
     private LayerMask VisibilityLayerMask;
+    [SerializeField, Tooltip("Which layers are included when doing visual check raycasts")]
+    private ContactFilter2D VisibilityFilter;
     [SerializeField]
     private Transform VisibilityCheckOrigin;
     /// <summary>
     /// How many seconds needs to pass before target is removed from the perceived targets list, if the target has exited out of sight
     /// </summary>
-    [SerializeField]
-    private float TargetLossTimer = 5f;
+    [SerializeField, Tooltip("How many seconds it takes before non-visible target is forgotten")]
+    private float ForgetDuration = 5f;
 
-    private float currentTime = 0f;
     private float elapsedTime = 0f;
     private List<Perceivable> perceivablesInProximity = new();
     private List<LostSightPerceivable> LostSightPerceivables = new();
-    List<Perceivable> PerceivablesToRemove;
-    List<Perceivable> PerceivablesToAdd;
+    List<Perceivable> TargetsToRemove;
+    List<Perceivable> TargetsToAdd;
     List<LostSightPerceivable> lsPercsToRemove;
 
     #endregion
@@ -57,12 +58,7 @@ public class VisualProximityPerceiver2D : Perceiver {
             bool IsTargetAlreadyUpForRemoval = IsTargetWaitingToBeForgotten(perceivable);
             // If target is not already to be removed, prepare it for removal
             if (!IsTargetAlreadyUpForRemoval) {
-                LostSightPerceivable percToAdd = new LostSightPerceivable();
-                percToAdd.Target = perceivable;
-                // Set the time in future when the target should be forgotten, if visual sight is not regained
-                percToAdd.TimeOfRemoval = Time.time + TargetLossTimer;
-                // Add the perceivable to be tracked
-                LostSightPerceivables.Add(percToAdd);
+                PrepareTargetToBeForgotten(perceivable);
             }
         }
     }
@@ -81,8 +77,8 @@ public class VisualProximityPerceiver2D : Perceiver {
     /// </summary>
     private void LimitedUpdate() {
         // Prepare lists for perception loop    
-        PerceivablesToRemove = new(); 
-        PerceivablesToAdd = new();
+        TargetsToRemove = new(); 
+        TargetsToAdd = new();
 
         // Check if targets in proximity can be seen
         Vector3 RaycastOrigin = VisibilityCheckOrigin.position; // Cache origin position of raycast before loop
@@ -94,10 +90,6 @@ public class VisualProximityPerceiver2D : Perceiver {
 
         // Remove targets which the perceiver has lost sight on & Add new perceived target
         UpdatePerceivedTargets();
-
-        // Debug
-        currentTime = Time.time;
-        print(LostSightPerceivables.Count);
     }
 
     #region Perception
@@ -110,13 +102,13 @@ public class VisualProximityPerceiver2D : Perceiver {
             // Do raycast
             RaycastHit2D HitResult = Physics2D.Raycast(RaycastOrigin, TargetVector, Mathf.Infinity, VisibilityLayerMask);
             Debug.DrawRay(RaycastOrigin, TargetVector, Color.green, 0.3f, false);
-
+            print(HitResult.collider.gameObject.name);
 
             // Prepare new targets to be added if they are seen
             bool CanSeeTarget = HitResult.transform == percTransform;
             bool IsTargetAlreadyPerceived = PerceivedTargets.Contains(perc);
             if (CanSeeTarget && !IsTargetAlreadyPerceived) {
-                PerceivablesToAdd.Add(perc);
+                TargetsToAdd.Add(perc);
             }
 
             // Check if sight has been regained on target which was waiting to be forgotten
@@ -142,7 +134,7 @@ public class VisualProximityPerceiver2D : Perceiver {
         LostSightPerceivable percToAdd = new LostSightPerceivable();
         percToAdd.Target = perc;
         // Set the time in future when the target should be forgotten, if visual sight is not regained
-        percToAdd.TimeOfRemoval = Time.time + TargetLossTimer;
+        percToAdd.TimeOfRemoval = Time.time + ForgetDuration;
         // Add the perceivable to be tracked
         LostSightPerceivables.Add(percToAdd);
     }
@@ -152,7 +144,7 @@ public class VisualProximityPerceiver2D : Perceiver {
             foreach (LostSightPerceivable lsPerc in LostSightPerceivables) {
                 if (Time.time >= lsPerc.TimeOfRemoval) {
                     lsPercsToRemove.Add(lsPerc);
-                    PerceivablesToRemove.Add(lsPerc.Target);
+                    TargetsToRemove.Add(lsPerc.Target);
                 }
             }
         }
@@ -162,9 +154,13 @@ public class VisualProximityPerceiver2D : Perceiver {
         // Remove tracked lsPercs on cooldown
         LostSightPerceivables = LostSightPerceivables.Except(lsPercsToRemove).ToList();
         // Remove old targets
-        PerceivedTargets = PerceivedTargets.Except(PerceivablesToRemove).ToList();
+        if (TargetsToRemove.Any()) {
+            RemoveTargets(TargetsToRemove);
+        }     
         // Add new targets to perceived
-        PerceivedTargets = PerceivedTargets.Union(PerceivablesToAdd).ToList();
+        if (TargetsToAdd.Any()) {
+            AddTargets(TargetsToAdd);
+        }    
     }
 
     private bool IsTargetWaitingToBeForgotten(Perceivable perc) {

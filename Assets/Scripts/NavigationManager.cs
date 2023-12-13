@@ -1,14 +1,20 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NavigationManager : MonoBehaviour
 {
+    // NavigationManager is responsible for updating the navigation grid during runtime 
 
-    private void Start() {
-        // Subscribe to callbacks
-        ObstacleHealth.OnObstacleDestroyed += UpdateNavGridNearObstacle;  
+    #region OnEnableDisable
+    private void OnEnable() {
+        ObstacleHealth.OnObstacleDestroyed += UpdateNavGridNearObstacle;
     }
+    private void OnDisable() {
+        ObstacleHealth.OnObstacleDestroyed -= UpdateNavGridNearObstacle;
+    }
+    #endregion
 
     /// <summary>
     /// Update the navigation grid (faster)

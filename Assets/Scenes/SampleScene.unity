@@ -386,21 +386,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1698146924}
     m_Modifications:
-    - target: {fileID: 1740880378655327292, guid: ceb932124eddbd54fa24891388a92575, type: 3}
-      propertyPath: TargetLossTimer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4073495828575695335, guid: ceb932124eddbd54fa24891388a92575, type: 3}
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 4327856101220365679, guid: ceb932124eddbd54fa24891388a92575, type: 3}
+      propertyPath: height
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327856101220365679, guid: ceb932124eddbd54fa24891388a92575, type: 3}
+      propertyPath: autoRepath.mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4454970207691564665, guid: ceb932124eddbd54fa24891388a92575, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.798
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4454970207691564665, guid: ceb932124eddbd54fa24891388a92575, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.032
+      value: 0.028
       objectReference: {fileID: 0}
     - target: {fileID: 4454970207691564665, guid: ceb932124eddbd54fa24891388a92575, type: 3}
       propertyPath: m_LocalPosition.z
@@ -434,7 +438,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3746729102222580796, guid: ceb932124eddbd54fa24891388a92575, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3656,7 +3661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIewZTKP0uAIAAMgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVFtv2jAU/ivIzytK0nLb2waUblJbNDr1YemDiU+IhWNHvhRoxX/fsRNISishJXzn9n3nknfCpakgs0ovNGf3igH53iP+nXzrtcY72NONkiv+BiefZ85s4Z1o8PlDLVeIxz7MqBKs5tkPuRHeOULQSZ4rXc7ZBqbKWINwToUBNGllfbRE6L1H9vhIRj7k0IS++WfviG8ZSAu69fvay8lM0LIC5vm2ztf9QdL4x/1JElwlqmm8on489CWUENw0bIg9VEHtlFbGoRZ0YJyiusAi6o/GiBTAN4X1tLvxj3luwDbkND3MuMY+1YnJT1U3r6RmWzN8pcL5UnEyDszqpPef7FdxMOdalXenunHka9iCZ9s/9JBRYzvd7cKzlnscGrWjYkvXAp4LkA9qoZWTDI1WOx/qDCSz9u9Z2rSAbNviNdUL0FWfxzToT4bRzXAwv4rGzcS8nGNoxH4qeLkOXb2pgZVQofsTHw8aR/ULuYdVMU1WRD2hvwae6Ka7U43hlmtj0dQIlp7pWjntXck8tM8Lc3aqtIQAN/wrkFTYwxLT2MtpXtg6ZS8st9RfT1O8sZ2O4iIkwK1/FF2YlmrXzs3Ab1dWS8WlXQHVWdHJZwq1uwdTPDoruIRWkTc8YBOnSsp6E80XYSunc5p1wizsrdMwo5aGk0BOuDCsG4oNDRHSCeF3M6jwyf+hCv978U0uKNYVASYPSoZj+vB88YuwcZx93HgS52wY02EC9PpmNF6vr5JkEg8Go+vJOBmPczok4SS4xJ5Tsayb1owKN0i2WiSu/+kD11toWoUjZJruFvytVJ3xc5mrVaYB5GOd4SwWNBbBTwabM44yV2Atl2H3yHtKhMq2wNJzojQ0dr63mqZtlpRU/FVZj6RkGj5qKfHw+cSWGl457HzxD8lA4OiAPXEBJa28KTqS439QSwMEFAAACAgAABAh7MzS069tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSM7TUUVBKL0osyCgGihiCOKWZKSB2tJJhWoqZYaKZUWqisYm5RVKSrpGRpaGpqbmxpYWRhUVaoplSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABAh7BlMo/S4AgAAyAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7MzS069tAAAAeAAAAAkAJAAAAAAAAAAAAAAABQMAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAC9AwAAAAA=
+    dataString: UEsDBBQAAAgIAAAQIewjAmELtwIAAMkFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVNtu2kAQ/RW0zw2ynXDrWwuEtFISVFLloc7D4h3jFetday8BEvHvnV2b2JBISDZnbmfOzPidcGkqyKzSC83ZvWJAvveIfyffeq3xDvZ0o+SKv8HJ55kzW3gnGnz+UMsV4rEPM6oEq3n2Q26Ed44QdJLnSpdztoGpMtYgnFNhAE1aWR8tEXrvkT0+kpEPOTShb/7ZO+JbBtKCbv2+9nIyE7SsgHm+rfN1f5A0/nF/kgRXid00XlE/HvoSSghuGjbEHqrQ7ZRWxmEv6MA4xe4Ci6g/GiNSAN8U1tPuxj/muQHbkNP0MOMadaoTk5+qFq+kZlszfKXC+VJxMg7M6qT3n+xXcTDnWpV3p7px5GvYgmfbP/SQUWM76nbhWcs9DkLtqNjStYDnAuSDWmjlJEOj1c6HOgPJrP370dq0gGzb4jXVC9BVn8c06E+G0c1wML+Kxs3EfDvHIMR+Kni5Dqre1MBKqKD+xMeDxlH9Qu5hVUyTFVFP6K+BJ7rp7lRjuOXaWDQ1DUvPdK2c9q5kHuTzjTk7VVpCgBv+FUgq7GGJaezlNC9snbIXllvqr6cp3thOR3EREuDWP4ouTEu1a+dm4Lcrq6Xi0q6A6qzo5DOF2t2DKR6dFVxC25E3PKCIUyVlvYnmi7CV0znNOmEW9tZpmFFLw0kgJ1wY1g1FQUOEdEL43Qxd+OT/sAv/e/EiFxTrigCTByXDMZ09X/wibBxn5xtP4pwNYzpMgF7fjMbr9VWSTOLBYHQ9GSfjcU6HJJwEl6g5FctatGZUuEHd+Ujc/9MXrrfQtApXyDTdLfhbqTrz5zJXq0wDyMfzFAY0VsFvBpszjn2uwFouw/KR95QIlW2BpR+J0qDsfG81TdssKan4q7IeSck0fNVS4uGPG1tqeOWw88XPkoHA2QF74gJKWnlTdCTH/1BLAwQUAAAICAAAECHszNLTr20AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IztNRRUEovSizIKAaKGII4pZkpIHa0kmFaiplhoplRaqKxiblFUpKukZGloampubGlhZGFRVqimVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAECHsIwJhC7cCAADJBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHszNLTr20AAAB4AAAACQAkAAAAAAAAAAAAAAAEAwAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAALwDAAAAAA==
     file_cachedStartup: {fileID: 0}
     cacheStartup: 0
   showNavGraphs: 1
@@ -3667,7 +3672,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -3681,11 +3686,43 @@ MonoBehaviour:
     _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
     _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
     _AreaColors: []
-  tagNames: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   navmeshUpdates:
@@ -5681,10 +5718,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5761813104519713412, guid: c7e3e2a9672bf8c4ead43fa38e603b10, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761813104519713412, guid: c7e3e2a9672bf8c4ead43fa38e603b10, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
