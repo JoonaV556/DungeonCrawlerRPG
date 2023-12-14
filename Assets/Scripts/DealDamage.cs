@@ -10,9 +10,8 @@ public class DealDamage : MonoBehaviour {
     /// </summary>
     [SerializeField]
     private float DamageToDeal = 100f;
-
-    // Debug
-    // private List<GameObject> HitObjects = new List<GameObject>();
+    [SerializeField]
+    private Transform DealerTransform;
 
     void OnCollisionEnter2D(Collision2D collision) {
         // Deal damage to the other object if it has a Health component
@@ -23,7 +22,7 @@ public class DealDamage : MonoBehaviour {
 
         Health otherObjHealth = collision.gameObject.GetComponent<Health>();
         if (otherObjHealth != null) {
-            otherObjHealth.TakeDamage(DamageToDeal);
+            otherObjHealth.TakeDamage(DamageToDeal, DealerTransform);
             // Debug
             // print("Dealt damage");
         }

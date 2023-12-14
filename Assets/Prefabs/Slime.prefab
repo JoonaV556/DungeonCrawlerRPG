@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4454970207691564665}
   - component: {fileID: 2944442358254087541}
   - component: {fileID: 1395340269918860170}
+  - component: {fileID: 64347313446988636}
   - component: {fileID: 896883132903724535}
   - component: {fileID: 7296865507174691801}
   - component: {fileID: 5752182627796456634}
@@ -102,7 +103,7 @@ GameObject:
   - component: {fileID: 5641378733848699107}
   - component: {fileID: 4327856101220365679}
   - component: {fileID: 1436501913431110906}
-  - component: {fileID: 64347313446988636}
+  - component: {fileID: 5428370306833722126}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -206,6 +207,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &64347313446988636
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073495828575695335}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 4
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &896883132903724535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageToDeal: 5
+  DealerTransform: {fileID: 4454970207691564665}
 --- !u!114 &7296865507174691801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +260,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ecfb108ad23ed4698ea935338270a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 500
+  OnReceiveDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5428370306833722126}
+        m_TargetAssemblyTypeName: KnockBackEffect, Assembly-CSharp
+        m_MethodName: DoKnockBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5752182627796456634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,30 +407,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIPath: {fileID: 4327856101220365679}
   SlimePerceiver: {fileID: 1740880378655327292}
---- !u!50 &64347313446988636
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &5428370306833722126
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4073495828575695335}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b7efe0b356e69469088d3201c4da3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RigidBody: {fileID: 64347313446988636}
+  KnockBackForce: 1
+  AIPath: {fileID: 4327856101220365679}
+  PreventMoveDuration: 0.7

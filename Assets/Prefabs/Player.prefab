@@ -403,6 +403,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  OnReceiveDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2542139189655021123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageToDeal: 100
+  DealerTransform: {fileID: 4744988580506149810}
 --- !u!1 &8772772070824423098
 GameObject:
   m_ObjectHideFlags: 0

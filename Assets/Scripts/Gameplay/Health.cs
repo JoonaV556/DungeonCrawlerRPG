@@ -20,6 +20,8 @@ public abstract class Health : MonoBehaviour
 
     #endregion
 
+    public UnityEvent_Vector2 OnReceiveDamage;
+
     private void Start() {
         currentHealth = MaxHealth;
     }
@@ -27,7 +29,10 @@ public abstract class Health : MonoBehaviour
     /// <summary>
     /// Used to deal damage to this health component
     /// </summary>
-    public void TakeDamage(float DamageToTake) {
+    public void TakeDamage(float DamageToTake, Transform DamageGiver) {
+        print(gameObject.name + " Took damage");
+        Vector2 DamageGiverPost = DamageGiver.transform.position;
+        OnReceiveDamage?.Invoke(DamageGiver.transform.position);
         if (currentHealth - DamageToTake <= 0f) {
             currentHealth = 0f;
             Die();
