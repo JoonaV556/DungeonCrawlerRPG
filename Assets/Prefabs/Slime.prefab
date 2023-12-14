@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5641378733848699107}
   - component: {fileID: 4327856101220365679}
   - component: {fileID: 1436501913431110906}
+  - component: {fileID: 64347313446988636}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -276,7 +277,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   VisibilityCheckOrigin: {fileID: 8122147744702071729}
-  ForgetDuration: 2
+  ForgetTargets: 1
+  ForgetDuration: 5
 --- !u!114 &5641378733848699107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +306,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -2
+    value: -1
 --- !u!114 &4327856101220365679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,9 +321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.08
-  height: 1
+  height: 0.16
   canMove: 1
-  maxSpeed: 0.2
+  maxSpeed: 0.3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -333,16 +335,16 @@ MonoBehaviour:
   enableRotation: 0
   autoRepath:
     mode: 2
-    period: 0.5
+    period: NaN
     sensitivity: 10
-    maximumPeriod: 2
+    maximumPeriod: 0.5
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  rotationSpeed: 32400
+  slowdownDistance: 0.16
+  pickNextWaypointDist: 0.16
+  endReachedDistance: 0.04
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -361,3 +363,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIPath: {fileID: 4327856101220365679}
   SlimePerceiver: {fileID: 1740880378655327292}
+--- !u!50 &64347313446988636
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073495828575695335}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

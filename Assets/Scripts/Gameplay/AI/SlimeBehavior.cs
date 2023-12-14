@@ -33,7 +33,7 @@ public class SlimeBehavior : MonoBehaviour
     }
 
     private void CheckIfPlayerWasAdded(List<Perceivable> percs) {
-        print("Detected add");
+        // print("Detected add");
         foreach (Perceivable perc in percs) {
             if (perc.gameObject.CompareTag("Player")) {
                 PlayerTransform = perc.transform;
@@ -43,7 +43,10 @@ public class SlimeBehavior : MonoBehaviour
         }
     }
     private void CheckIfPlayerWasRemoved(List<Perceivable> percs) {
-        print("Detected removal");
+        // print("Detected removal");
+        if (!SeesPlayer) {
+            return;
+        }
         foreach (Perceivable perc in percs) {
             if (perc.gameObject.CompareTag("Player")) {
                 SeesPlayer = false;

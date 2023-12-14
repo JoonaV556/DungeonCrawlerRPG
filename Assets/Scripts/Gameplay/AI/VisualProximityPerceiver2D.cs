@@ -21,6 +21,8 @@ public class VisualProximityPerceiver2D : Perceiver {
     private ContactFilter2D VisibilityFilter;
     [SerializeField]
     private Transform VisibilityCheckOrigin;
+    [SerializeField, Tooltip("Should the perceiver forget out of range targets?")]
+    private bool ForgetTargets = true;
     /// <summary>
     /// How many seconds needs to pass before target is removed from the perceived targets list, if the target has exited out of sight
     /// </summary>
@@ -57,7 +59,7 @@ public class VisualProximityPerceiver2D : Perceiver {
             // Check if target is already waiting to be removed
             bool IsTargetAlreadyUpForRemoval = IsTargetWaitingToBeForgotten(perceivable);
             // If target is not already to be removed, prepare it for removal
-            if (!IsTargetAlreadyUpForRemoval) {
+            if (!IsTargetAlreadyUpForRemoval && ForgetTargets) {
                 PrepareTargetToBeForgotten(perceivable);
             }
         }
@@ -102,7 +104,7 @@ public class VisualProximityPerceiver2D : Perceiver {
             // Do raycast
             RaycastHit2D HitResult = Physics2D.Raycast(RaycastOrigin, TargetVector, Mathf.Infinity, VisibilityLayerMask);
             Debug.DrawRay(RaycastOrigin, TargetVector, Color.green, 0.3f, false);
-            print(HitResult.collider.gameObject.name);
+            // print(HitResult.collider.gameObject.name);
 
             // Prepare new targets to be added if they are seen
             bool CanSeeTarget = HitResult.transform == percTransform;
@@ -118,6 +120,7 @@ public class VisualProximityPerceiver2D : Perceiver {
                 LostSightPerceivables.Remove(lsPercWaiting);
             }
 
+            if (!ForgetTargets) { return; } // Cancel target removal if it is disabled
             // Prepare old targets for removal if they cannot be seen
             if (IsTargetAlreadyPerceived && !CanSeeTarget) {
                 // Check if target is already waiting to be removed
@@ -140,7 +143,7 @@ public class VisualProximityPerceiver2D : Perceiver {
     }
 
     private void UpdateLostSightTargets() {
-        if (LostSightPerceivables.Count >= 0) {
+        if (LostSightPerceivables.Any()) {
             foreach (LostSightPerceivable lsPerc in LostSightPerceivables) {
                 if (Time.time >= lsPerc.TimeOfRemoval) {
                     lsPercsToRemove.Add(lsPerc);
@@ -152,7 +155,9 @@ public class VisualProximityPerceiver2D : Perceiver {
 
     private void UpdatePerceivedTargets() {
         // Remove tracked lsPercs on cooldown
-        LostSightPerceivables = LostSightPerceivables.Except(lsPercsToRemove).ToList();
+        if (lsPercsToRemove.Any()) {
+            LostSightPerceivables = LostSightPerceivables.Except(lsPercsToRemove).ToList();
+        }
         // Remove old targets
         if (TargetsToRemove.Any()) {
             RemoveTargets(TargetsToRemove);
