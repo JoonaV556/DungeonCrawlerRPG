@@ -1,55 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Controls player movement.
+/// </summary>
 public class PlayerMovement : MonoBehaviour {
-    #region Properties
-    [SerializeField]
-    private float MovementSpeed = 20f;
+    /* Implements movement by using AddForce() on player's RigidBody2D in the "MovePlayer"-method.
+    Player's max speed is controlled by clamping the velocity of the Rigidbody in the "ClampPlayerVelocity"-method. */
 
-    [SerializeField]
+    [SerializeField, Tooltip("Adjust this to change player's acceleration and movement speed")]
+    private float MovementForce = 1f;
+
+    [SerializeField, Tooltip("Drag player's rigidbody here")]
     private Rigidbody2D Rigidbody;
 
-    [SerializeField]
-    private ContactFilter2D ContactFilter;
+    [SerializeField, Tooltip("Use this to limit the player movement velocity")]
+    private float MaxVelocity = 1.3f;
 
-    private Vector2 InputVector = new Vector2(0, 0);
-    private List<RaycastHit2D> RaycastHits = new List<RaycastHit2D>(); // Used for storing movement preventing collisions
-    public float collisionOffset = 0.15f; // How far movement raycast collisions are cast in addition to characters base movement speed
+    #region PrivateProperties
+    private Vector2 InputVector = Vector2.zero;
+    Vector2 currentVelocity = Vector2.zero;
     #endregion
 
+    // All movement logic is called here
     private void FixedUpdate() {
-
         if (InputVector != Vector2.zero) {
-            bool success = TryMove(InputVector); // Try to move
-            if (!success) { 
-                success = TryMove(new Vector2(InputVector.x, 0)); // If collided with something, try to slide along X axis
-                if (!success) {
-                    TryMove(new Vector2(0, InputVector.y)); // If collided with something along x, try to slide along Y axis
-                }
-            }
+            // Move player
+            MovePlayer();
         }
+        // Clamp players velocity to prevent accelerating to too high speeds
+        ClampPlayerVelocity();
     }
 
-    private bool TryMove(Vector2 direction) {
-        int collisionCount = Rigidbody.Cast(
-            direction,
-            ContactFilter,
-            RaycastHits,
-            MovementSpeed * Time.fixedDeltaTime + collisionOffset);
-
-        if (collisionCount == 0)
-        {
-            Rigidbody.MovePosition(Rigidbody.position + direction * MovementSpeed * Time.fixedDeltaTime);
-            return true;
-        } else {
-            return false;
-        }
+    // Adjust player's max movement speed
+    private void ClampPlayerVelocity() {
+        // Calculate clamped velocity
+        currentVelocity = Rigidbody.velocity;
+        float clampedX = Mathf.Clamp(currentVelocity.x, -MaxVelocity, MaxVelocity);
+        float clampedY = Mathf.Clamp(currentVelocity.y, -MaxVelocity, MaxVelocity);
+        // Clamp velocity
+        Rigidbody.velocity = new Vector2(clampedX, clampedY);
     }
 
+    // Move player
+    private void MovePlayer() {
+        // Do movement
+        Vector2 MoveVector = InputVector * MovementForce * Time.fixedDeltaTime;
+        Rigidbody.AddForce(MoveVector, ForceMode2D.Force);
+    }
+
+    // Read movement input
     public void OnMove(InputValue input) {
-        // ("dick " + input.Get<Vector2>());
-        InputVector = input.Get<Vector2>();
+        // Read movement direction from input
+        InputVector = input.Get<Vector2>().normalized;
     }
 }
