@@ -142,7 +142,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -155,7 +155,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -324,6 +324,7 @@ MonoBehaviour:
   VisibilityCheckOrigin: {fileID: 8122147744702071729}
   ForgetTargets: 1
   ForgetDuration: 5
+  EnableDebugRay: 0
 --- !u!114 &5641378733848699107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.08
+  radius: 0.07
   height: 0.16
   canMove: 1
   maxSpeed: 0.3
@@ -388,7 +389,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 32400
   slowdownDistance: 0.16
-  pickNextWaypointDist: 0.16
+  pickNextWaypointDist: 0.08
   endReachedDistance: 0.04
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1

@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RigidBody: {fileID: 3436295021676354922}
-  KnockBackForce: 3
+  KnockBackForce: 2
   movementComp: {fileID: 336076573797497898}
   PreventMoveDuration: 0.3
 --- !u!1 &6342549605369414862
