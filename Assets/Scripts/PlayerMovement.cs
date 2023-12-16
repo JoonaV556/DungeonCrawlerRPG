@@ -17,13 +17,18 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField, Tooltip("Use this to limit the player movement velocity")]
     private float MaxVelocity = 1.3f;
 
-    #region PrivateProperties
+    #region Properties
     private Vector2 InputVector = Vector2.zero;
     Vector2 currentVelocity = Vector2.zero;
+    public bool EnableMovement = true;
     #endregion
 
     // All movement logic is called here
     private void FixedUpdate() {
+        if (!EnableMovement) {
+            return; 
+        }
+
         if (InputVector != Vector2.zero) {
             // Move player
             MovePlayer();

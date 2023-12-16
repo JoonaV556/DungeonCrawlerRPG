@@ -8,6 +8,8 @@ public class VisualProximityPerceiver2D : Perceiver {
     // Collider is used to get list of considered targets
     // Raycast is done to check if targets can be seen
 
+
+
     #region Properties
 
     /// <summary>
@@ -28,6 +30,8 @@ public class VisualProximityPerceiver2D : Perceiver {
     /// </summary>
     [SerializeField, Tooltip("How many seconds it takes before non-visible target is forgotten")]
     private float ForgetDuration = 5f;
+    [SerializeField]
+    private bool EnableDebugRay = false;
 
     private float elapsedTime = 0f;
     private List<Perceivable> perceivablesInProximity = new();
@@ -103,7 +107,10 @@ public class VisualProximityPerceiver2D : Perceiver {
             Vector3 TargetVector = perc.VisualTransform.position - VisibilityCheckOrigin.position;
             // Do raycast
             RaycastHit2D HitResult = Physics2D.Raycast(RaycastOrigin, TargetVector, Mathf.Infinity, VisibilityLayerMask);
-            Debug.DrawRay(RaycastOrigin, TargetVector, Color.green, 0.3f, false);
+            // Do debug raycast
+            if (EnableDebugRay) {
+                Debug.DrawRay(RaycastOrigin, TargetVector, Color.green, 0.3f, false);
+            }           
             // print(HitResult.collider.gameObject.name);
 
             // Prepare new targets to be added if they are seen
@@ -120,7 +127,7 @@ public class VisualProximityPerceiver2D : Perceiver {
                 LostSightPerceivables.Remove(lsPercWaiting);
             }
 
-            if (!ForgetTargets) { return; } // Cancel target removal if it is disabled
+            if (!ForgetTargets) { return; } // Cancel is forgetting targets is disabled
             // Prepare old targets for removal if they cannot be seen
             if (IsTargetAlreadyPerceived && !CanSeeTarget) {
                 // Check if target is already waiting to be removed
