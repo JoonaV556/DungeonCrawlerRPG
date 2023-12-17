@@ -202,4 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RigidBody: {fileID: 2600270000143747842}
-  KnockBackForce: 1
+  KnockBackForce: 0.5
