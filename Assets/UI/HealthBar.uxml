@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Stylesheets/TestStyles.uss?fileID=7433441132597879392&amp;guid=e67f320cbe1e4e44abac6a6ea3b5225f&amp;type=3#TestStyles" />
-    <ui:ProgressBar value="100" title="my-progress" name="HealthBar" low-value="0" style="width: 100%; height: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; opacity: 1; position: relative;" />
-</ui:UXML>

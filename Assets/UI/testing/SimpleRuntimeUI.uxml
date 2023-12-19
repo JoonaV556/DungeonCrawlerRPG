@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 30%; align-self: center; background-color: rgba(132, 132, 132, 0.82); padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; border-left-color: rgb(228, 228, 228); border-right-color: rgb(228, 228, 228); border-top-color: rgb(228, 228, 228); border-bottom-color: rgb(228, 228, 228); border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-left-width: 7px;">
+        <ui:Label text="This is a Label" display-tooltip-when-elided="true" />
+        <ui:Button text="This is a Button" display-tooltip-when-elided="true" name="button" />
+        <ui:Toggle label="Display the counter?" name="toggle" />
+        <ui:TextField picking-mode="Ignore" label="Text Field" text="filler text" name="input-message" />
+        <ui:ProgressBar value="22" title="my-progress" name="ProgressBar" />
+    </ui:VisualElement>
+</ui:UXML>

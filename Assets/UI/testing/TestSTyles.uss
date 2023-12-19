@@ -1,0 +1,19 @@
+.health-bar {
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url('project://database/Assets/Sprites/Roguelike%20Base%20Pack/Spritesheet/roguelikeSheet_transparent.png?fileID=823765032&guid=e08aed0c19b3ec149bfc5ce8757cd7df&type=3#roguelikeSheet_transparent_63');
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    max-height: 30px;
+    min-height: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}

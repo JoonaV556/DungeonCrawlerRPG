@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Health : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public abstract class Health : MonoBehaviour
     #endregion
 
     public UnityEvent_Vector2 OnReceiveDamage;
+    public UnityEvent<float> OnTakeDamage;
 
     private void Start() {
         currentHealth = MaxHealth;
@@ -35,9 +37,11 @@ public abstract class Health : MonoBehaviour
         OnReceiveDamage?.Invoke(DamageGiver.transform.position);
         if (currentHealth - DamageToTake <= 0f) {
             currentHealth = 0f;
+            OnTakeDamage?.Invoke(currentHealth);
             Die();
         } else {
             currentHealth -= DamageToTake;
+            OnTakeDamage?.Invoke(currentHealth);
         }
     }
 
