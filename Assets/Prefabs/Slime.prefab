@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56003860f2d2a1b4991e524663f7fe01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageToDeal: 5
+  DamageToDeal: 10
   DealerTransform: {fileID: 4454970207691564665}
   IsTrigger: 0
 --- !u!114 &7296865507174691801
@@ -277,6 +277,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5752182627796456634
 MonoBehaviour:
   m_ObjectHideFlags: 0
