@@ -36,3 +36,8 @@
     align-items: stretch;
     position: absolute;
 }
+
+.debug-menu--label {
+    color: rgb(255, 247, 126);
+    font-size: 16px;
+}

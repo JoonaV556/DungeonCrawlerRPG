@@ -8,18 +8,7 @@ using static UnityEngine.Rendering.DebugUI.MessageBox;
 
 public class GameHUD : ConstructUI {
 
-    [SerializeField]
-    private string WaitingToStartText = "Press any key to start";
-    [SerializeField]
-    private string GameOverText = "Game over, press any key to try again";
-
     private ProgressBar healthBar;
-
-    private VisualElement blackBG; // Black background panel
-
-    private Label waitLabel;
-
-    private Label overLabel;
 
     // Generate the ui
     protected override void Construct() {
@@ -27,27 +16,9 @@ public class GameHUD : ConstructUI {
         RootElement.AddToClassList("root");
 
         // Create healthbar
-        healthBar = new ProgressBar();
+        healthBar = CreateVisualElement<ProgressBar>(RootElement, "health-bar");
         healthBar.title = "HP";
         healthBar.value = 100f;
-        healthBar.AddToClassList("health-bar");
-        // Add healthbar
-        RootElement.Add(healthBar);
-
-        // Add black background element
-        blackBG = new VisualElement();
-        blackBG.AddToClassList("panel-black");
-        RootElement.Add(blackBG);
-
-        // Add labels
-        waitLabel = new Label();
-        overLabel = new Label();
-        waitLabel.text = WaitingToStartText;
-        overLabel.text = GameOverText;
-        blackBG.Add(waitLabel);
-        blackBG.Add(overLabel);
-        waitLabel.AddToClassList("text-centered");
-        overLabel.AddToClassList("text-centered");
     }
 
     // Update the health UI element
@@ -56,30 +27,18 @@ public class GameHUD : ConstructUI {
     }
 
     #region ReactToGameStates
-    public void OnWaitingToStart() {     
-        // Enable background
-        ShowElement(blackBG);
-        // Enable wait label
-        ShowElement(waitLabel);
+    public void OnWaitingToStart() {
         // Hide healthbar
         HideElement(healthBar);
-        // Hide game over label 
-        HideElement(overLabel);
     }
 
     public void OnGameStarted() {
         // Hide wait UI
         // Enable health bar
         ShowElement(healthBar);
-        HideElement(waitLabel);
-        HideElement(blackBG);
     }
 
     public void OnGameOver() {
-        // Enable game over ui
-        // Disable health bar
-        ShowElement(blackBG);
-        ShowElement(overLabel);
     }
 
     // Choose how to react

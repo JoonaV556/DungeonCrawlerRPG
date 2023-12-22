@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 /// </summary>
 public abstract class ConstructUI : MonoBehaviour
 {
+    [Header("General - REQUIRED")]
     [SerializeField, Tooltip("UIDocument component to construct the ui into")]
     private UIDocument uiDoc;
 
@@ -26,6 +27,7 @@ public abstract class ConstructUI : MonoBehaviour
     // Refresh the UI in editor after changes have been saved
     private void OnValidate() {
         if (Application.isPlaying) return;
+
         // Do the initial construction
         PreConstruct();
         // Do the user defined construction
@@ -54,9 +56,15 @@ public abstract class ConstructUI : MonoBehaviour
     /// <summary>
     /// Creates a visual element of specified type. Optionally adds it as a child to a specified parent & Assigns the specified classes to it
     /// </summary>
-    protected VisualElement CreateVisualElement<T>(VisualElement parentElement = null, string[] classes = null) where T : VisualElement, new() {
+    /// <param name="parentElement">
+    /// The parent element the new VisualElement will be added as a child to
+    /// </param>
+    /// <param name="@class">
+    /// Optional USS class to assign to the new element
+    /// </param>
+    protected T CreateVisualElement<T>(VisualElement parentElement = null, string @class = null) where T : VisualElement, new() {
         // Create new element of specified type
-        T newElement = new T();
+        T newElement = new();
 
         // If parent is specified, add it as a child of specific parent element 
         if (parentElement != null) {
@@ -64,10 +72,8 @@ public abstract class ConstructUI : MonoBehaviour
         }
 
         // Assign specified classes to the visual element
-        if (classes != null) {
-            foreach (string className in classes) {
-                newElement.AddToClassList(className);
-            }
+        if (@class != null) {
+                newElement.AddToClassList(@class);
         }
 
         return newElement;
@@ -85,5 +91,11 @@ public abstract class ConstructUI : MonoBehaviour
     /// </summary>
     protected void ShowElement(VisualElement element) {
         element.style.display = DisplayStyle.Flex;
+    }
+
+    protected bool IsEnabled(VisualElement element) {
+        if(element.style.display == DisplayStyle.Flex) {
+            return true;
+        } else { return false; }
     }
 }
