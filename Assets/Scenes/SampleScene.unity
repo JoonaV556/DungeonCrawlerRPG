@@ -3809,6 +3809,7 @@ GameObject:
   - component: {fileID: 499134249}
   - component: {fileID: 499134250}
   - component: {fileID: 499134251}
+  - component: {fileID: 499134252}
   m_Layer: 0
   m_Name: GameHUD
   m_TagString: Untagged
@@ -3845,7 +3846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: d6f7aadca92a14945959b4c46d2fd5d2, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 1007700462}
+  sourceAsset: {fileID: 747663868}
   m_SortingOrder: 0
 --- !u!114 &499134251
 MonoBehaviour:
@@ -3863,6 +3864,20 @@ MonoBehaviour:
   styles: {fileID: 7433441132597879392, guid: f4114ffe1ec96544cabf8c917f67be87, type: 3}
   WaitingToStartText: Press any key to start
   GameOverText: Game over, press any key to try again
+--- !u!114 &499134252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499134248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8a1a61c59614f41b901e7428e33ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiDoc: {fileID: 0}
+  styles: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,6 +4252,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7078857794684563043, guid: 56035e4a3e4deee4192c0f12c5864388, type: 3}
   m_PrefabInstance: {fileID: 3763504317777005760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &747663868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11995, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImportedWithErrors: 0
+  m_ImportedWithWarnings: 0
+  m_Usings: []
+  inlineSheet: {fileID: 0}
+  m_VisualElementAssets: []
+  m_TemplateAssets: []
+  m_UxmlObjectEntries: []
+  m_UxmlObjectIds: 
+  m_AssetEntries: []
+  m_Slots: []
+  m_ContentContainerId: 0
+  m_ContentHash: 0
 --- !u!1001 &861663744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4534,30 +4573,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56035e4a3e4deee4192c0f12c5864388, type: 3}
---- !u!114 &1007700462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11995, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImportedWithErrors: 0
-  m_ImportedWithWarnings: 0
-  m_Usings: []
-  inlineSheet: {fileID: 0}
-  m_VisualElementAssets: []
-  m_TemplateAssets: []
-  m_UxmlObjectEntries: []
-  m_UxmlObjectIds: 
-  m_AssetEntries: []
-  m_Slots: []
-  m_ContentContainerId: 0
-  m_ContentHash: 0
 --- !u!1 &1060532017
 GameObject:
   m_ObjectHideFlags: 0

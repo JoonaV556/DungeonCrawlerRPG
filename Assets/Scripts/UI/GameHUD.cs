@@ -6,19 +6,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI.MessageBox;
 
-public class GameHUD : MonoBehaviour {
-    [SerializeField]
-    private UIDocument uiDoc;
-
-    [SerializeField]
-    private StyleSheet styles;
+public class GameHUD : ConstructUI {
 
     [SerializeField]
     private string WaitingToStartText = "Press any key to start";
     [SerializeField]
     private string GameOverText = "Game over, press any key to try again";
-
-    private VisualElement root;
 
     private ProgressBar healthBar;
 
@@ -28,32 +21,10 @@ public class GameHUD : MonoBehaviour {
 
     private Label overLabel;
 
-    private VisualElement DebugMenuRoot;
-
-
-
-    // Generate UI at game start
-    private void Awake() {
-        Generate();
-    }
-
-    // Refresh the UI in editor after changes have been saved
-    private void OnValidate() {
-        if (Application.isPlaying) return;
-        Generate();
-    }
-
     // Generate the ui
-    private void Generate() {
-        // Create new visual tree asset 
-        uiDoc.visualTreeAsset = ScriptableObject.CreateInstance<VisualTreeAsset>();
-
-        // Get root
-        root = uiDoc.rootVisualElement;
-        // Add our custom stylesheet to the document
-        root.styleSheets.Add(styles);
+    protected override void Construct() {
         // Style root
-        root.AddToClassList("root");
+        RootElement.AddToClassList("root");
 
         // Create healthbar
         healthBar = new ProgressBar();
@@ -61,12 +32,12 @@ public class GameHUD : MonoBehaviour {
         healthBar.value = 100f;
         healthBar.AddToClassList("health-bar");
         // Add healthbar
-        root.Add(healthBar);
+        RootElement.Add(healthBar);
 
         // Add black background element
         blackBG = new VisualElement();
         blackBG.AddToClassList("panel-black");
-        root.Add(blackBG);
+        RootElement.Add(blackBG);
 
         // Add labels
         waitLabel = new Label();
@@ -77,46 +48,11 @@ public class GameHUD : MonoBehaviour {
         blackBG.Add(overLabel);
         waitLabel.AddToClassList("text-centered");
         overLabel.AddToClassList("text-centered");
-
-        // Add debug menu
-        DebugMenuRoot = CreateVisualElement<VisualElement>(root, new[] { "debug-menu--background"});
-    }
-
-    /// <summary>
-    /// Construct a visual element of type. Optionally add it as a child to a specified parent & Assign specified classes to it
-    /// </summary>
-    private VisualElement CreateVisualElement<T>(VisualElement parentElement = null, string[] classes = null) where T : VisualElement, new() {
-        // Create new element of specified type
-        T newElement = new T();
-
-        // If parent is specified, add it as a child of specific parent element 
-        if (parentElement != null) {
-            parentElement.Add(newElement);
-        }
-
-        // Assign specified classes to the visual element
-        if (classes != null) {
-            foreach (string className in classes) {
-                newElement.AddToClassList(className);
-            }        
-        }
-
-        return newElement;
     }
 
     // Update the health UI element
     public void UpdateHealthBar(float newHealth) {
         healthBar.value = newHealth;
-    }
-
-    // Disables a visual element by setting its display to none
-    private void HideElement(VisualElement element) {
-        element.style.display = DisplayStyle.None;
-    }
-
-    // Enables a visual element by setting its display to flex
-    private void ShowElement(VisualElement element) {
-        element.style.display = DisplayStyle.Flex;
     }
 
     #region ReactToGameStates

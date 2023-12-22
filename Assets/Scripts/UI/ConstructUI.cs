@@ -8,19 +8,27 @@ using UnityEngine.UIElements;
 public abstract class ConstructUI : MonoBehaviour
 {
     [SerializeField, Tooltip("UIDocument component to construct the ui into")]
-    protected UIDocument uiDoc;
+    private UIDocument uiDoc;
 
     [SerializeField, Tooltip("Stylesheet to use in the UI")]
-    protected StyleSheet styles;
+    private StyleSheet styles;
+
+    protected VisualElement RootElement; // Root element of the created UXML tree
 
     // Generate UI at game start
     private void Awake() {
+        // Do the initial construction
+        PreConstruct();
+        // Do the user defined construction
         Construct();
     }
 
     // Refresh the UI in editor after changes have been saved
     private void OnValidate() {
         if (Application.isPlaying) return;
+        // Do the initial construction
+        PreConstruct();
+        // Do the user defined construction
         Construct();
     }
 
@@ -28,6 +36,20 @@ public abstract class ConstructUI : MonoBehaviour
     /// Construct the UI elements in this method
     /// </summary>
     protected abstract void Construct();
+
+    /// <summary>
+    /// Does the initial UI construction steps before the child defined construction steps
+    /// </summary>
+    private void PreConstruct() {
+        if (uiDoc == null) return;
+
+        // Create new visual tree asset 
+        uiDoc.visualTreeAsset = ScriptableObject.CreateInstance<VisualTreeAsset>();
+        // Get the root element
+        RootElement = uiDoc.rootVisualElement;
+        // Add our custom stylesheet to the root element
+        RootElement.styleSheets.Add(styles);
+    }
 
     /// <summary>
     /// Creates a visual element of specified type. Optionally adds it as a child to a specified parent & Assigns the specified classes to it
