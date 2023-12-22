@@ -57,16 +57,14 @@ public class GameManager : MonoBehaviour {
             }
             // Reset game at game over state if any key is pressed
             if (CurrentState == GameState.GameOver) {
-                SetGameState(GameState.WaitingToStart);
+                // Reset game by reloading the scene
+                SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
             }
         }
     }
 
     // Init GameManager
     private void Init() {
-        // Keep GameManager loaded on scene changes
-        DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(this);
         // Set initial game state
         SetGameState(StartState);
     }
@@ -76,11 +74,6 @@ public class GameManager : MonoBehaviour {
         // Do general state-related behavior
         switch (newState) {
             case GameState.WaitingToStart:
-                if (CurrentState != GameState.WaitingToStart) {
-                    // Restart level
-                    SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-                }
-
                 // Pause game at start
                 Time.timeScale = 0f;
                 break;

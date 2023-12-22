@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI.MessageBox;
@@ -16,12 +18,19 @@ public class GameHUD : MonoBehaviour {
     [SerializeField]
     private string GameOverText = "Game over, press any key to try again";
 
-
     private VisualElement root;
+
     private ProgressBar healthBar;
+
     private VisualElement blackBG; // Black background panel
+
     private Label waitLabel;
+
     private Label overLabel;
+
+    private VisualElement DebugMenuRoot;
+
+
 
     // Generate UI at game start
     private void Awake() {
@@ -68,6 +77,31 @@ public class GameHUD : MonoBehaviour {
         blackBG.Add(overLabel);
         waitLabel.AddToClassList("text-centered");
         overLabel.AddToClassList("text-centered");
+
+        // Add debug menu
+        DebugMenuRoot = CreateVisualElement<VisualElement>(root, new[] { "debug-menu--background"});
+    }
+
+    /// <summary>
+    /// Construct a visual element of type. Optionally add it as a child to a specified parent & Assign specified classes to it
+    /// </summary>
+    private VisualElement CreateVisualElement<T>(VisualElement parentElement = null, string[] classes = null) where T : VisualElement, new() {
+        // Create new element of specified type
+        T newElement = new T();
+
+        // If parent is specified, add it as a child of specific parent element 
+        if (parentElement != null) {
+            parentElement.Add(newElement);
+        }
+
+        // Assign specified classes to the visual element
+        if (classes != null) {
+            foreach (string className in classes) {
+                newElement.AddToClassList(className);
+            }        
+        }
+
+        return newElement;
     }
 
     // Update the health UI element
