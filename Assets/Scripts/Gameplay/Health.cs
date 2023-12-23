@@ -69,7 +69,7 @@ public abstract class Health : MonoBehaviour
     /// </summary>
     /// <param name="HealAmount">How much to heal</param>
     public void Heal(float HealAmount) {
-        print("Healed");
+        // print("Healed");
         if (currentHealth + HealAmount >= MaxHealth) {
             currentHealth = MaxHealth;
         } else {

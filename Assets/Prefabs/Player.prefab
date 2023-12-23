@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 8631643343086163280}
   - component: {fileID: 2542139189655021123}
   - component: {fileID: 2870344973520052189}
+  - component: {fileID: 6926499392951239792}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -406,6 +407,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2542139189655021123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +445,19 @@ MonoBehaviour:
   KnockBackForce: 2
   movementComp: {fileID: 336076573797497898}
   PreventMoveDuration: 0.3
+--- !u!114 &6926499392951239792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761813104519713412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f257eca13bb0741a5687b02042ac0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5834896154469870939}
 --- !u!1 &6342549605369414862
 GameObject:
   m_ObjectHideFlags: 0

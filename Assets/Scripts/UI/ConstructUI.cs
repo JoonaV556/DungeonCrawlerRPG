@@ -14,6 +14,9 @@ public abstract class ConstructUI : MonoBehaviour
     [SerializeField, Tooltip("Stylesheet to use in the UI")]
     private StyleSheet styles;
 
+    [SerializeField, Tooltip("Should the UI be displayed in the Game window outside of Play-mode?")]
+    private bool EnableEditorPreview = false;
+
     protected VisualElement RootElement; // Root element of the created UXML tree
 
     // Generate UI at game start
@@ -27,6 +30,7 @@ public abstract class ConstructUI : MonoBehaviour
     // Refresh the UI in editor after changes have been saved
     private void OnValidate() {
         if (Application.isPlaying) return;
+        if (!EnableEditorPreview) return;
 
         // Do the initial construction
         PreConstruct();
