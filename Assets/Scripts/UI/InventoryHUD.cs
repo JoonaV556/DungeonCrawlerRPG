@@ -18,8 +18,9 @@ public class InventoryHUD : ConstructUI
     public UnityEvent OnInventoryOpened;
 
     private VisualElement InventoryPanel; // Background panel of the inventory
-    private DraggableElement Draggable;
-    
+    private VisualElement Draggable;
+    private VisualElement Draggable2;
+
     private bool CanOpenInventory = false;
 
 
@@ -28,8 +29,14 @@ public class InventoryHUD : ConstructUI
         RootElement.AddToClassList("root");
         // Create inventory background
         InventoryPanel = CreateVisualElement<VisualElement>(RootElement, "inventory-panel");
-        Draggable = CreateVisualElement<DraggableElement>(InventoryPanel, "draggable");
-        Draggable.RegisterCallback<GeometryChangedEvent>(OnItemCreated);
+        Draggable = CreateVisualElement<VisualElement>(InventoryPanel, "draggable");
+        Draggable.AddManipulator(new ExampleDragger());
+        Draggable2 = CreateVisualElement<VisualElement>(InventoryPanel, "draggable");
+        Draggable2.AddManipulator(new ExampleDragger());
+        Draggable2.style.left = 500;
+        Draggable2.style.top = 500;
+        Draggable2.style.backgroundColor = Color.red;
+
     }
 
     private void Update() {
@@ -59,10 +66,6 @@ public class InventoryHUD : ConstructUI
     }
 
     #endregion
-
-    private void OnItemCreated(GeometryChangedEvent evt) {
-        // print(Draggable.sizeX + " ," + Draggable.sizeY);
-    }
 
     public void OnWaitingToStart() {
         CanOpenInventory = false;

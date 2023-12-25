@@ -9,7 +9,6 @@ public class DraggableElement : VisualElement {
     private bool mouseDown = false;
     public float sizeX { get; private set; }
     public float sizeY { get; private set; }
-    private float screenHeight;
 
     public DraggableElement() {
 
@@ -23,7 +22,6 @@ public class DraggableElement : VisualElement {
     }
 
     private void OnGeometryChanged(GeometryChangedEvent evt) {
-        screenHeight = Screen.height;
         sizeX = this.resolvedStyle.width;
         sizeY = this.resolvedStyle.height;
     }
@@ -35,14 +33,14 @@ public class DraggableElement : VisualElement {
 
     private void OnMouseUp(MouseUpEvent evt) {
         mouseDown = false;
-        if (dragging) { dragging = false; }
+        if (dragging) { StopDrag(); }
     }
 
     private void OnMouseMove(MouseMoveEvent evt) {
 
-        Debug.Log(evt.mousePosition.x + " ," + evt.mousePosition.y);
+        // Debug.Log(evt.mousePosition.x + " ," + evt.mousePosition.y);
 
-        if (mouseDown && dragging == false) { dragging = true; }
+        if (mouseDown && dragging == false) { StartDrag(); }
 
         if (dragging) {
             this.style.left = (evt.mousePosition.x) - sizeX / 2f;
@@ -53,12 +51,22 @@ public class DraggableElement : VisualElement {
     }
 
     private void OnMouseLeave(MouseLeaveEvent evt) {
-        mouseDown = false;
-        if (dragging) { dragging = false; }
+        this.style.backgroundColor = Color.black;
+        // mouseDown = false;
+        // if (dragging) { StopDrag(); }
     }
 
     private void OnMouseEnter(MouseEnterEvent evt) {
+        this.style.backgroundColor = Color.red;
         if (mouseDown == true) { mouseDown = false; }
-        if (dragging && mouseDown == false) { dragging = false; }
+        if (dragging && mouseDown == false) { StopDrag(); }
+    }
+
+    private void StartDrag() {
+        BringToFront();
+        dragging = true;
+    }
+    private void StopDrag() { 
+        dragging = false;
     }
 }
