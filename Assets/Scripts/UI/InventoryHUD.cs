@@ -8,6 +8,10 @@ using UnityEngine.UIElements;
 public class InventoryHUD : ConstructUI
 {
     [Space(10)]
+    [SerializeField, Tooltip("How many inventoryslots the inventory should have")]
+    private int InventorySlotAmount = 1;
+
+    [Space(10)]
     [SerializeField]
     private InputAction OpenInventoryAction;
 
@@ -17,26 +21,18 @@ public class InventoryHUD : ConstructUI
     public UnityEvent OnInventoryClosed;
     public UnityEvent OnInventoryOpened;
 
-    private VisualElement InventoryPanel; // Background panel of the inventory
-    private VisualElement Draggable;
-    private VisualElement Draggable2;
+    private VisualElement InventoryContainer; // Background panel of the inventory
 
     private bool CanOpenInventory = false;
 
 
     protected override void Construct() {
         // Apply 100% width and 100% height to root
-        RootElement.AddToClassList("root");
+        RootElement.AddToClassList("inv-root");
         // Create inventory background
-        InventoryPanel = CreateVisualElement<VisualElement>(RootElement, "inventory-panel");
-        Draggable = CreateVisualElement<VisualElement>(InventoryPanel, "draggable");
-        Draggable.AddManipulator(new ExampleDragger());
-        Draggable2 = CreateVisualElement<VisualElement>(InventoryPanel, "draggable");
-        Draggable2.AddManipulator(new ExampleDragger());
-        Draggable2.style.left = 500;
-        Draggable2.style.top = 500;
-        Draggable2.style.backgroundColor = Color.red;
-
+        InventoryContainer = CreateVisualElement<VisualElement>(RootElement, "inv-container");
+        // Create inventoryslots
+        CreateInventorySlots();
     }
 
     private void Update() {
@@ -55,11 +51,11 @@ public class InventoryHUD : ConstructUI
     }
 
     private void OnOpenInventoryPressed(InputAction.CallbackContext context) {
-        if (IsEnabled(InventoryPanel)) {
-            HideElement(InventoryPanel);
+        if (IsEnabled(InventoryContainer)) {
+            HideElement(InventoryContainer);
             OnInventoryClosed?.Invoke();
         } else if (CanOpenInventory) {
-            ShowElement(InventoryPanel);
+            ShowElement(InventoryContainer);
             OnInventoryOpened?.Invoke();
             // print(Draggable.sizeX + " ," + Draggable.sizeY);
         }
@@ -67,9 +63,16 @@ public class InventoryHUD : ConstructUI
 
     #endregion
 
+    private void CreateInventorySlots() {
+        for (int i = 1; i <= InventorySlotAmount; i++) {
+            // Create slot
+            InventorySlot newSlot = CreateVisualElement<InventorySlot>(InventoryContainer, "inv-slot");
+        }
+    }
+
     public void OnWaitingToStart() {
         CanOpenInventory = false;
-        HideElement(InventoryPanel);
+        HideElement(InventoryContainer);
     }
 
     public void OnGameStarted() {
@@ -78,7 +81,7 @@ public class InventoryHUD : ConstructUI
 
     public void OnGameOver() {
         CanOpenInventory = false;
-        HideElement(InventoryPanel);
+        HideElement(InventoryContainer);
     }
 
     // Choose how to react
