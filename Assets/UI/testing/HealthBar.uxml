@@ -1,21 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/TestSTyles.uss?fileID=7433441132597879392&amp;guid=9e9101704c62ab64f86984ec0b8d9ae7&amp;type=3#TestSTyles" />
+    <Style src="project://database/Assets/UI/testing/TestSTyles.uss?fileID=7433441132597879392&amp;guid=9e9101704c62ab64f86984ec0b8d9ae7&amp;type=3#TestSTyles" />
+    <Style src="project://database/Assets/UI/Styles.uss?fileID=7433441132597879392&amp;guid=f4114ffe1ec96544cabf8c917f67be87&amp;type=3#Styles" />
     <ui:VisualElement name="root" style="flex-grow: 1; flex-wrap: wrap; align-items: flex-start; flex-direction: row; justify-content: flex-start; align-self: auto;">
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
-        <ui:VisualElement name="VisualElement" class="health-bar" style="flex-grow: 1;" />
+        <InventoryItem class="item-ghostItem" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0020.png?fileID=2800000&amp;guid=c4a4efc149086a74bb70007ff1c9e6ce&amp;type=3#tile_0020&apos;); top: 203px; left: 232px;" />
     </ui:VisualElement>
 </ui:UXML>

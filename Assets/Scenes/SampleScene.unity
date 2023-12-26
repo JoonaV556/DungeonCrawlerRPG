@@ -185,30 +185,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45fcd5acc40095144b54c54d517fd682, type: 3}
---- !u!114 &96081309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11995, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImportedWithErrors: 0
-  m_ImportedWithWarnings: 0
-  m_Usings: []
-  inlineSheet: {fileID: 0}
-  m_VisualElementAssets: []
-  m_TemplateAssets: []
-  m_UxmlObjectEntries: []
-  m_UxmlObjectIds: 
-  m_AssetEntries: []
-  m_Slots: []
-  m_ContentContainerId: 0
-  m_ContentHash: 0
 --- !u!1 &167066939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,7 +4130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: d6f7aadca92a14945959b4c46d2fd5d2, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 96081309}
+  sourceAsset: {fileID: 1794464965}
   m_SortingOrder: 0
 --- !u!114 &543648326
 MonoBehaviour:
@@ -4172,21 +4148,56 @@ MonoBehaviour:
   styles: {fileID: 7433441132597879392, guid: f4114ffe1ec96544cabf8c917f67be87, type: 3}
   EnableEditorPreview: 1
   InventorySlotAmount: 27
-  OpenInventoryAction:
+  testSprite: {fileID: 2800000, guid: 8774911816bf6c549bf15007e9eaa37c, type: 3}
+  OpenInventory:
     m_Name: Open Inventory
     m_Type: 1
     m_ExpectedControlType: Button
-    m_Id: 92bb6072-5245-4e65-86f2-2f1f96255eaa
+    m_Id: 85723b21-0170-403f-9a34-502b1684c160
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 24639e63-4e54-4675-8bdc-ea1e74e16574
+      m_Id: e1a75561-e24a-42e1-bd55-6ee3991d0004
       m_Path: <Keyboard>/i
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Open Inventory
+      m_Flags: 0
+    m_Flags: 0
+  MousePosition:
+    m_Name: Mouse Position
+    m_Type: 2
+    m_ExpectedControlType: Vector2
+    m_Id: 7000614b-970f-4375-a6fe-1829cbd3958c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 661bba4e-e5e5-4a66-8031-73042a07b565
+      m_Path: <Mouse>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Position
+      m_Flags: 0
+    m_Flags: 0
+  MouseLeftPress:
+    m_Name: Mouse Left Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f77469f4-634b-49ec-b3fa-9ed9b21aa14e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44017eb1-1723-4dc2-b3f4-75b656e45d8c
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Left Press
       m_Flags: 0
     m_Flags: 0
   OnInventoryClosed:
@@ -5370,6 +5381,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7078857794684563043, guid: 56035e4a3e4deee4192c0f12c5864388, type: 3}
   m_PrefabInstance: {fileID: 1739615711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794464965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11995, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImportedWithErrors: 0
+  m_ImportedWithWarnings: 0
+  m_Usings: []
+  inlineSheet: {fileID: 0}
+  m_VisualElementAssets: []
+  m_TemplateAssets: []
+  m_UxmlObjectEntries: []
+  m_UxmlObjectIds: 
+  m_AssetEntries: []
+  m_Slots: []
+  m_ContentContainerId: 0
+  m_ContentHash: 0
 --- !u!1 &1845118714
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ public abstract class ConstructUI : MonoBehaviour
     /// <param name="@class">
     /// Optional USS class to assign to the new element
     /// </param>
-    protected T CreateVisualElement<T>(VisualElement parentElement = null, string @class = null) where T : VisualElement, new() {
+    public static T CreateVisualElement<T>(VisualElement parentElement = null, string @class = null) where T : VisualElement, new() {
         // Create new element of specified type
         T newElement = new();
 
@@ -86,18 +86,19 @@ public abstract class ConstructUI : MonoBehaviour
     /// <summary>
     /// Hides a visual element by setting its displayStyle to none
     /// </summary>
-    protected void HideElement(VisualElement element) {
+    public static void HideElement(VisualElement element) {
         element.style.display = DisplayStyle.None;
     }
 
     /// <summary>
     /// Enables a visual element by setting its display to flex
     /// </summary>
-    protected void ShowElement(VisualElement element) {
+    public static void ShowElement(VisualElement element) {
         element.style.display = DisplayStyle.Flex;
     }
 
-    protected bool IsEnabled(VisualElement element) {
+    // Check if VisualElements display property is set to flex, i.e. if element is enabled
+    public static bool IsEnabled(VisualElement element) {
         if(element.style.display == DisplayStyle.Flex) {
             return true;
         } else { return false; }
