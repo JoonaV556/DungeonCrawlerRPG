@@ -123,10 +123,6 @@
     max-width: 46px;
     max-height: 46px;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    left: 0;
     flex-shrink: 0;
 }
 

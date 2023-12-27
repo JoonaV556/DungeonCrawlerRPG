@@ -103,4 +103,12 @@ public abstract class ConstructUI : MonoBehaviour
             return true;
         } else { return false; }
     }
+
+    public static void EnableVisibility(VisualElement element) {
+        element.style.visibility = Visibility.Visible;
+    }
+
+    public static void DisableVisibility(VisualElement element) {
+        element.style.visibility = Visibility.Hidden;
+    }
 }

@@ -41,7 +41,8 @@ public class InventoryHUD : ConstructUI {
 
     private bool CanOpenInventory = false;
     private bool dragging;
-    private Vector2 mousePos;
+    private Vector2 mouseEventPos;
+    private Vector2 mouseScreenPos;
     private float screenHeight;
 
 
@@ -65,19 +66,22 @@ public class InventoryHUD : ConstructUI {
         // Create Ghostitem
         ghostItem = CreateVisualElement<InventoryItem>(RootElement, "item-ghostItem");
         // Hide ghostitem at start
-        // HideElement(ghostItem);
-        ghostItem.style.top = -1000;
-        ghostItem.style.left = -1000;
+        DisableVisibility(ghostItem);
+        // ghostItem.style.top = -1000;
+        // ghostItem.style.left = -1000;
 
         // DEBUG - Add some test items to slots
     }
 
     private void Update() {
-        print(ghostItem.style.left + ", " + ghostItem.style.bottom);
+        print(mouseScreenPos);
         if (dragging) {
-            // Move ghostItem with cursor
-            ghostItem.style.left = (mousePos.x) - ghostItem.sizeX / 2f;
-            ghostItem.style.top = (mousePos.y) - ghostItem.sizeY / 2f;
+            // Move ghostItem with mouse event position
+            // ghostItem.style.left = (mouseEventPos.x) - ghostItem.sizeX / 2f;
+            // ghostItem.style.top = (mouseEventPos.y) - ghostItem.sizeY / 2f;
+            // Move with mouse screen position
+            ghostItem.style.left = (mouseScreenPos.x) - ghostItem.sizeX / 2f;
+            ghostItem.style.bottom = (mouseScreenPos.y) - ghostItem.sizeY / 2f;
         }
     }
 
@@ -104,7 +108,7 @@ public class InventoryHUD : ConstructUI {
 
     public void StartDrag(Background itemSprite) {
         // Enable ghostItem
-        // ShowElement(ghostItem);
+        EnableVisibility(ghostItem);
         // Set ghostItems image to the item being dragged
         ghostItem.style.backgroundImage = itemSprite;
         dragging = true;
@@ -113,9 +117,9 @@ public class InventoryHUD : ConstructUI {
     private void StopDrag() {
         // Do stuff when drag ends
         // Hide ghostItem
-        // HideElement(ghostItem);
-        ghostItem.style.top = -1000;
-        ghostItem.style.left = -1000;
+        DisableVisibility(ghostItem);
+        // ghostItem.style.top = -1000;
+        //ghostItem.style.left = -1000;
         // Unset ghostItems Image
         ghostItem.style.backgroundImage = null;
         dragging = false;
@@ -165,19 +169,19 @@ public class InventoryHUD : ConstructUI {
         OpenInventory.Enable();
         OpenInventory.started += OnOpenInventoryPressed;
         MousePosition.Enable();
-        // MousePosition.performed += OnMouseMove;
+        MousePosition.performed += OnInputMouseMove;
         MouseLeftPress.Enable();
         MouseLeftPress.canceled += OnMouseUp;
     }
 
     private void OnDisable() {
         OpenInventory.started -= OnOpenInventoryPressed;
-        //MousePosition.performed -= OnMouseMove;
+        MousePosition.performed -= OnInputMouseMove;
         MouseLeftPress.canceled -= OnMouseUp;
     }
 
     private void OnMouseMove(MouseMoveEvent evt) {
-        mousePos = evt.mousePosition;
+        mouseEventPos = evt.mousePosition;
         // print("mouse moved, " + mousePos);
     }
 
@@ -188,8 +192,8 @@ public class InventoryHUD : ConstructUI {
         }
     }
 
-    private void OnMouseMove(InputAction.CallbackContext context) {
-        mousePos = context.ReadValue<Vector2>();
+    private void OnInputMouseMove(InputAction.CallbackContext context) {
+        mouseScreenPos = context.ReadValue<Vector2>();
     }
 
     #endregion
