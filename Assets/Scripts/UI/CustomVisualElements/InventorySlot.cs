@@ -6,16 +6,25 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class InventorySlot : VisualElement {
-    private bool mouseDown = false;
 
+    /// <summary>
+    /// The visual reperesentation of an item in the slot. Slot always has one. When slot actually doesn't have an item innit, the childItem is just hidden
+    /// </summary>
     public InventoryItem childItem;
 
+    /// <summary>
+    /// Whether or not mouse is currently held down over this slot?
+    /// </summary>
+    private bool mouseDown = false;
 
+    // Constructor
     public InventorySlot() {
+        // Create the childItem
         childItem = ConstructUI.CreateVisualElement<InventoryItem>(this);
+        // Hide the childItem by default
         ConstructUI.HideElement(childItem);
 
-        // Register callbacks
+        // Register callbacks to mouse events
         RegisterCallback<MouseDownEvent>(OnMouseDown);
         RegisterCallback<MouseMoveEvent>(OnMouseMove);
         RegisterCallback<MouseLeaveEvent>(OnMouseLeave);
@@ -23,20 +32,22 @@ public class InventorySlot : VisualElement {
 
     }
 
+    #region RespondToMouseInput
+
     private void OnMouseEnter(MouseEnterEvent evt) {
         // Inform inventoryHUD that mouse is over a slot (Used for dragging stuff)
         InventoryHUD.Instance.OnCursorEnterSlot(this);
-
     }
 
     private void OnMouseLeave(MouseLeaveEvent evt) {
         // Inform inventoryHUD that mouse has exited the slot (Used for dragging stuff)
         InventoryHUD.Instance.OnCursorLeaveSlot(this);
-
+        // Update mouseDown
         mouseDown = false;
     }
 
     private void OnMouseDown(MouseDownEvent evt) {
+        // Update mouseDown
         mouseDown = true;
     }
 
@@ -47,11 +58,18 @@ public class InventorySlot : VisualElement {
         }
         // Check if slot has an item
         if (HasItem(out Background image)) {
+            // Inform inventory manager that item is being dragged from this slot
             InventoryHUD.Instance.StartDrag(this, image);
         }
     }
 
-    // Does this slot have an item innit?
+    #endregion
+
+    /// <summary>
+    /// Checks if this slot has an item init. If yes, the item is returned
+    /// </summary>
+    /// <param name="itemImage">Item currently in the slot</param>
+    /// <returns>Returns true if the slot has an item in it, else false</returns>
     public bool HasItem(out Background itemImage) {
         // Check if the slot has an item
         bool hasItem = ConstructUI.IsEnabled(childItem);
@@ -59,26 +77,41 @@ public class InventorySlot : VisualElement {
             // If the slot has an item, return the item in the slot 
             itemImage = childItem.style.backgroundImage.value;
         } else {
+            // Else return nothing
             itemImage = null;
         }
         return hasItem;
     }
 
+    /// <summary>
+    /// Checks if this slot has an item init.
+    /// </summary>
+    /// <returns>Returns true if the slot has an item in it, else false</returns>
     public bool HasItem() {
         // Check if the slot has an item
         bool hasItem = ConstructUI.IsEnabled(childItem);
         return hasItem;
     }
 
+    /// <summary>
+    /// Sets the item in the InventorySlot. Warning: If item already exists in the slot, it will not be removed! Rememeber to remove the item beforehand
+    /// </summary>
+    /// <param name="newItem">New item to add into the slot</param>
     public void SetItem(Texture2D newItem) {
+        // Enable the itemUI 
         ConstructUI.ShowElement(childItem);
+        // Set the new item
         childItem.style.backgroundImage = newItem;
     }
 
-    // Removes the current item in the slot, if one exists
+    /// <summary>
+    /// Removes the item currently in the slot
+    /// </summary>
     public void ClearItem() {
         if (this.HasItem()) {
+            // Make the itemUI not visible
             ConstructUI.HideElement(childItem);
+            // Clear the item
             childItem.style.backgroundImage = null;
         }
     }

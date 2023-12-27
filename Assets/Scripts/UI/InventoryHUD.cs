@@ -267,6 +267,4 @@ public class InventoryHUD : ConstructUI {
 
     #endregion
 
-
-
 }
