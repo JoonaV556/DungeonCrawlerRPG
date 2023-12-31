@@ -20,7 +20,7 @@ public class InventorySlot : VisualElement {
     // Constructor
     public InventorySlot() {
         // Create the childItem
-        childItem = ConstructUI.CreateVisualElement<InventoryItem>(this);
+        childItem = UIShortcuts.CreateVisualElement<InventoryItem>(this);
         // Hide the childItem by default
         ConstructUI.HideElement(childItem);
 

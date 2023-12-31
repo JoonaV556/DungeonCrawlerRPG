@@ -15,11 +15,11 @@ public class GameStateHUD : ConstructUI {
 
     protected override void Construct() {
         // Add black background element
-        blackBG = CreateVisualElement<VisualElement>(RootElement, "panel-black");
+        blackBG = UIShortcuts.CreateVisualElement<VisualElement>(RootElement, "panel-black");
 
         // Add labels
-        waitLabel = CreateVisualElement<Label>(blackBG, "text-centered");
-        overLabel = CreateVisualElement<Label>(blackBG, "text-centered");
+        waitLabel = UIShortcuts.CreateVisualElement<Label>(blackBG, "text-centered");
+        overLabel = UIShortcuts.CreateVisualElement<Label>(blackBG, "text-centered");
         waitLabel.text = WaitingToStartText;
         overLabel.text = GameOverText;
     }

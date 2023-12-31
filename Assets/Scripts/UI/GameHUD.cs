@@ -16,7 +16,7 @@ public class GameHUD : ConstructUI {
         RootElement.AddToClassList("root");
 
         // Create healthbar
-        healthBar = CreateVisualElement<ProgressBar>(RootElement, "health-bar");
+        healthBar = UIShortcuts.CreateVisualElement<ProgressBar>(RootElement, "health-bar");
         healthBar.title = "HP";
         healthBar.value = 100f;
     }

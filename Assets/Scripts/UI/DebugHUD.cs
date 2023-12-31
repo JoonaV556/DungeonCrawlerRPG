@@ -32,10 +32,10 @@ public class DebugHUD : ConstructUI {
 
     protected override void Construct() {
         // Create elements
-        debugPanel = CreateVisualElement<VisualElement>(RootElement, "debug-menu--background");
-        debugLabel = CreateVisualElement<Label>(debugPanel, "debug-menu--label");
-        damagePlayerBtn = CreateVisualElement<Button>(debugPanel);
-        healPlayerBtn = CreateVisualElement<Button>(debugPanel);
+        debugPanel = UIShortcuts.CreateVisualElement<VisualElement>(RootElement, "debug-menu--background");
+        debugLabel = UIShortcuts.CreateVisualElement<Label>(debugPanel, "debug-menu--label");
+        damagePlayerBtn = UIShortcuts.CreateVisualElement<Button>(debugPanel);
+        healPlayerBtn = UIShortcuts.CreateVisualElement<Button>(debugPanel);
         // Init labels
         debugLabel.text = "Debug Menu";
         damagePlayerBtn.text = "DamagePlayer";

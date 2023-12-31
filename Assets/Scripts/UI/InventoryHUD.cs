@@ -60,13 +60,13 @@ public class InventoryHUD : ConstructUI {
         RootElement.RegisterCallback<MouseMoveEvent>(OnMouseMove);
 
         // Create inventory background
-        InventoryContainer = CreateVisualElement<VisualElement>(RootElement, "inv-container");
+        InventoryContainer = UIShortcuts.CreateVisualElement<VisualElement>(RootElement, "inv-container");
 
         // Create inventoryslots
         CreateInventorySlots();
 
         // Create Ghostitem
-        ghostItem = CreateVisualElement<InventoryItem>(RootElement, "item-ghostItem");
+        ghostItem = UIShortcuts.CreateVisualElement<InventoryItem>(RootElement, "item-ghostItem");
         // Hide ghostitem at start
         DisableVisibility(ghostItem);
         // Make ghostItem not react to mouse events (CRITICAL for slot detection)
@@ -102,7 +102,7 @@ public class InventoryHUD : ConstructUI {
     private void CreateInventorySlots() {
         for (int i = 1; i <= InventorySlotAmount; i++) {
             // Create slot
-            InventorySlot newSlot = CreateVisualElement<InventorySlot>(InventoryContainer, "item-slot");
+            InventorySlot newSlot = UIShortcuts.CreateVisualElement<InventorySlot>(InventoryContainer, "item-slot");
             if (i == 2) {
                 AddItemToSlot(newSlot);
             }

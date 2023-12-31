@@ -28,8 +28,8 @@ public class InventoryItem : VisualElement
     public InventoryItem() {
         // Create child members
         this.AddToClassList("item-image");
-        stackSizeContainer = ConstructUI.CreateVisualElement<VisualElement>(this, "item-stacksizeContainer");
-        stackSizeLabel = ConstructUI.CreateVisualElement<Label>(stackSizeContainer, "item-stacksizeLabel");
+        stackSizeContainer = UIShortcuts.CreateVisualElement<VisualElement>(this, "item-stacksizeContainer");
+        stackSizeLabel = UIShortcuts.CreateVisualElement<Label>(stackSizeContainer, "item-stacksizeLabel");
         stackSizeLabel.text = "1";
 
         RegisterCallback<GeometryChangedEvent>(OnGeometryChanged);
