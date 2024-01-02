@@ -1,0 +1,66 @@
+.window {
+    align-self: auto;
+}
+
+.window-header {
+    flex-direction: row;
+    min-width: 60px;
+    max-height: 30px;
+    min-height: 30px;
+    justify-content: space-between;
+}
+
+.window-content {
+}
+
+.window-header-left {
+    flex-direction: row;
+}
+
+.window-header-label {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 24px;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: middle-left;
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+}
+
+.window-header-topIcon {
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    max-height: 100%;
+    width: 30px;
+    height: 100%;
+    max-width: 30px;
+    min-height: 100%;
+    min-width: 30px;
+}
+
+.window-closeBtn--Container {
+    flex-grow: 1;
+    max-width: 30px;
+    max-height: 100%;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.window-header-closeBtn {
+    width: 100px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
