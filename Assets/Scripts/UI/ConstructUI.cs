@@ -14,7 +14,7 @@ public abstract class ConstructUI : MonoBehaviour
     [SerializeField, Tooltip("Stylesheet to use in the UI")]
     private StyleSheet styles;
 
-    [SerializeField, Tooltip("Should the UI be displayed in the Game window outside of Play-mode?")]
+    [SerializeField, Tooltip("Should the UI be displayed in the Game window outside of Play mode?")]
     private bool EnableEditorPreview = false;
 
     protected VisualElement RootElement; // Root element of the created UXML tree
@@ -56,34 +56,5 @@ public abstract class ConstructUI : MonoBehaviour
         RootElement = uiDoc.rootVisualElement;
         // Add our custom stylesheet to the root element
         RootElement.styleSheets.Add(styles);
-    }
-
-    /// <summary>
-    /// Hides a visual element by setting its displayStyle to none
-    /// </summary>
-    public static void HideElement(VisualElement element) {
-        element.style.display = DisplayStyle.None;
-    }
-
-    /// <summary>
-    /// Enables a visual element by setting its display to flex
-    /// </summary>
-    public static void ShowElement(VisualElement element) {
-        element.style.display = DisplayStyle.Flex;
-    }
-
-    // Check if VisualElements display property is set to flex, i.e. if element is enabled
-    public static bool IsEnabled(VisualElement element) {
-        if(element.style.display == DisplayStyle.Flex) {
-            return true;
-        } else { return false; }
-    }
-
-    public static void EnableVisibility(VisualElement element) {
-        element.style.visibility = Visibility.Visible;
-    }
-
-    public static void DisableVisibility(VisualElement element) {
-        element.style.visibility = Visibility.Hidden;
     }
 }

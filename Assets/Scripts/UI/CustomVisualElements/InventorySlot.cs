@@ -22,7 +22,7 @@ public class InventorySlot : VisualElement {
         // Create the childItem
         childItem = UIShortcuts.CreateVisualElement<InventoryItem>(this);
         // Hide the childItem by default
-        ConstructUI.HideElement(childItem);
+        UIShortcuts.HideElement(childItem);
 
         // Register callbacks to mouse events
         RegisterCallback<MouseDownEvent>(OnMouseDown);
@@ -72,7 +72,7 @@ public class InventorySlot : VisualElement {
     /// <returns>Returns true if the slot has an item in it, else false</returns>
     public bool HasItem(out Background itemImage) {
         // Check if the slot has an item
-        bool hasItem = ConstructUI.IsEnabled(childItem);
+        bool hasItem = UIShortcuts.IsEnabled(childItem);
         if (hasItem) {
             // If the slot has an item, return the item in the slot 
             itemImage = childItem.style.backgroundImage.value;
@@ -89,7 +89,7 @@ public class InventorySlot : VisualElement {
     /// <returns>Returns true if the slot has an item in it, else false</returns>
     public bool HasItem() {
         // Check if the slot has an item
-        bool hasItem = ConstructUI.IsEnabled(childItem);
+        bool hasItem = UIShortcuts.IsEnabled(childItem);
         return hasItem;
     }
 
@@ -99,7 +99,7 @@ public class InventorySlot : VisualElement {
     /// <param name="newItem">New item to add into the slot</param>
     public void SetItem(Texture2D newItem) {
         // Enable the itemUI 
-        ConstructUI.ShowElement(childItem);
+        UIShortcuts.ShowElement(childItem);
         // Set the new item
         childItem.style.backgroundImage = newItem;
     }
@@ -110,7 +110,7 @@ public class InventorySlot : VisualElement {
     public void ClearItem() {
         if (this.HasItem()) {
             // Make the itemUI not visible
-            ConstructUI.HideElement(childItem);
+            UIShortcuts.HideElement(childItem);
             // Clear the item
             childItem.style.backgroundImage = null;
         }

@@ -68,7 +68,7 @@ public class InventoryHUD : ConstructUI {
         // Create Ghostitem
         ghostItem = UIShortcuts.CreateVisualElement<InventoryItem>(RootElement, "item-ghostItem");
         // Hide ghostitem at start
-        DisableVisibility(ghostItem);
+        UIShortcuts.DisableVisibility(ghostItem);
         // Make ghostItem not react to mouse events (CRITICAL for slot detection)
         ghostItem.pickingMode = PickingMode.Ignore;
         // Set ghost items position to hide it from screen
@@ -89,11 +89,11 @@ public class InventoryHUD : ConstructUI {
     }
 
     private void OnOpenInventoryPressed(InputAction.CallbackContext context) {
-        if (IsEnabled(RootElement)) {
-            HideElement(RootElement);
+        if (UIShortcuts.IsEnabled(RootElement)) {
+            UIShortcuts.HideElement(RootElement);
             OnInventoryClosed?.Invoke();
         } else if (CanOpenInventory) {
-            ShowElement(RootElement);
+            UIShortcuts.ShowElement(RootElement);
             OnInventoryOpened?.Invoke();
             // print(Draggable.sizeX + " ," + Draggable.sizeY);
         }
@@ -113,7 +113,7 @@ public class InventoryHUD : ConstructUI {
         // Store the slot from which the item is being dragged from
         oldSlot = startSlot;
         // Enable ghostItem
-        EnableVisibility(ghostItem);
+        UIShortcuts.EnableVisibility(ghostItem);
         // Set ghostItems image to the item being dragged
         ghostItem.style.backgroundImage = itemSprite;
         dragging = true;
@@ -136,7 +136,7 @@ public class InventoryHUD : ConstructUI {
         dropSlot = null;
 
         // Hide ghostItem
-        DisableVisibility(ghostItem);
+        UIShortcuts.DisableVisibility(ghostItem);
         // Unset ghostItems Image
         ghostItem.style.backgroundImage = null;
 
@@ -189,7 +189,7 @@ public class InventoryHUD : ConstructUI {
 
     public void OnWaitingToStart() {
         CanOpenInventory = false;
-        HideElement(RootElement);
+        UIShortcuts.HideElement(RootElement);
     }
 
     public void OnGameStarted() {
@@ -198,7 +198,7 @@ public class InventoryHUD : ConstructUI {
 
     public void OnGameOver() {
         CanOpenInventory = false;
-        HideElement(InventoryContainer);
+        UIShortcuts.HideElement(InventoryContainer);
     }
 
     // Choose how to react
@@ -261,7 +261,7 @@ public class InventoryHUD : ConstructUI {
     #region Debug
     // Testing only -- Add some test items to item slots
     private void AddItemToSlot(InventorySlot slot) {
-        ShowElement(slot.childItem);
+        UIShortcuts.ShowElement(slot.childItem);
         slot.childItem.style.backgroundImage = testSprite;
     }
 

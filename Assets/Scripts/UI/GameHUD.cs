@@ -29,13 +29,13 @@ public class GameHUD : ConstructUI {
     #region ReactToGameStates
     public void OnWaitingToStart() {
         // Hide healthbar
-        HideElement(healthBar);
+        UIShortcuts.HideElement(healthBar);
     }
 
     public void OnGameStarted() {
         // Hide wait UI
         // Enable health bar
-        ShowElement(healthBar);
+        UIShortcuts.ShowElement(healthBar);
     }
 
     public void OnGameOver() {

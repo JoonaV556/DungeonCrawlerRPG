@@ -47,10 +47,10 @@ public class DebugHUD : ConstructUI {
 
     // Toggle the debug hud when the associated input action is triggered
     private void ToggleDebugHUD(InputAction.CallbackContext context) {
-        if (IsEnabled(debugPanel)) {
-            HideElement(debugPanel);
+        if (UIShortcuts.IsEnabled(debugPanel)) {
+            UIShortcuts.HideElement(debugPanel);
         } else if (canEnableHUD){
-            ShowElement(debugPanel);
+            UIShortcuts.ShowElement(debugPanel);
         }
     }
 
@@ -81,7 +81,7 @@ public class DebugHUD : ConstructUI {
     #region ReactToGameStates
 
     public void OnWaitingToStart() {
-        HideElement(debugPanel);
+        UIShortcuts.HideElement(debugPanel);
         canEnableHUD = false;
     }
 
@@ -90,7 +90,7 @@ public class DebugHUD : ConstructUI {
     }
 
     public void OnGameOver() {
-        HideElement(debugPanel);
+        UIShortcuts.HideElement(debugPanel);
         canEnableHUD = false;
     }
 

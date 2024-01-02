@@ -28,26 +28,26 @@ public class GameStateHUD : ConstructUI {
 
     public void OnWaitingToStart() {
         // Enable background
-        ShowElement(blackBG);
+        UIShortcuts.ShowElement(blackBG);
         // Enable wait label
-        ShowElement(waitLabel);
+        UIShortcuts.ShowElement(waitLabel);
         // Hide healthbar
         // Hide game over label 
-        HideElement(overLabel);
+        UIShortcuts.HideElement(overLabel);
     }
 
     public void OnGameStarted() {
         // Hide wait UI
         // Enable health bar
-        HideElement(waitLabel);
-        HideElement(blackBG);
+        UIShortcuts.HideElement(waitLabel);
+        UIShortcuts.HideElement(blackBG);
     }
 
     public void OnGameOver() {
         // Enable game over ui
         // Disable health bar
-        ShowElement(blackBG);
-        ShowElement(overLabel);
+        UIShortcuts.ShowElement(blackBG);
+        UIShortcuts.ShowElement(overLabel);
     }
 
     // Choose how to react
