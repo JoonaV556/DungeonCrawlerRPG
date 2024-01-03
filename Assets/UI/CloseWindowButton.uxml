@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/CloseWindowButton.uss?fileID=7433441132597879392&amp;guid=eddf15d01fd7b834e817888011388ae8&amp;type=3#CloseWindowButton" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%; background-color: rgba(121, 159, 139, 0.4); align-items: center;" />
+</ui:UXML>

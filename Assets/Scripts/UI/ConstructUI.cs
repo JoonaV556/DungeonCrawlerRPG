@@ -54,6 +54,8 @@ public abstract class ConstructUI : MonoBehaviour
         uiDoc.visualTreeAsset = ScriptableObject.CreateInstance<VisualTreeAsset>();
         // Get the root element
         RootElement = uiDoc.rootVisualElement;
+
+        if (styles == null) { return; }
         // Add our custom stylesheet to the root element
         RootElement.styleSheets.Add(styles);
     }

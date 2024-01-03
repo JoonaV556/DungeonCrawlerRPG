@@ -4,13 +4,15 @@
 
 .window-header {
     flex-direction: row;
-    min-width: 60px;
+    min-width: 90px;
     max-height: 30px;
     min-height: 30px;
     justify-content: space-between;
+    background-color: rgb(67, 67, 67);
 }
 
 .window-content {
+    background-color: rgb(159, 159, 159);
 }
 
 .window-header-left {

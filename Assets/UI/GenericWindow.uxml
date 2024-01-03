@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GenericWindow.uss?fileID=7433441132597879392&amp;guid=6631e079d601fbe449b32059bf0b8c66&amp;type=3#GenericWindow" />
+    <Style src="project://database/Assets/UI/CloseWindowButton.uss?fileID=7433441132597879392&amp;guid=eddf15d01fd7b834e817888011388ae8&amp;type=3#CloseWindowButton" />
+    <Style src="project://database/Assets/UI/TestHUD.uss?fileID=7433441132597879392&amp;guid=0a4667f8b17952a4a909e943d3b2d924&amp;type=3#TestHUD" />
+    <ui:VisualElement name="Root" class="root">
+        <ui:VisualElement name="Window" class="window">
+            <ui:VisualElement name="Header" class="window-header" />
+            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

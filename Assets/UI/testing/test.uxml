@@ -2,16 +2,13 @@
     <Style src="project://database/Assets/UI/GenericWindow.uss?fileID=7433441132597879392&amp;guid=6631e079d601fbe449b32059bf0b8c66&amp;type=3#GenericWindow" />
     <ui:VisualElement name="Root" style="width: 100%; height: 100%; background-color: rgba(121, 159, 139, 0.4); align-items: center;">
         <ui:VisualElement name="Window" class="window">
-            <ui:VisualElement name="Header" class="window-header" style="background-color: rgb(72, 72, 72);">
-                <ui:VisualElement name="Container_left" class="window-header-left">
-                    <ui:VisualElement name="HeaderIcon" class="window-header-topIcon" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0065.png?fileID=2800000&amp;guid=89e9aded05de33a4390dcd2679dfaec3&amp;type=3#tile_0065&apos;);" />
-                    <ui:Label tabindex="-1" text="DraggableWindow" parse-escape-sequences="true" display-tooltip-when-elided="true" class="window-header-label" style="font-size: 14px;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="ClosebtnContainer" class="window-closeBtn--Container">
-                    <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="true" class="window-header-closeBtn" />
-                </ui:VisualElement>
+            <ui:VisualElement name="Header" class="window-header" style="background-color: rgb(72, 72, 72);" />
+            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);">
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" />
+                <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" />
             </ui:VisualElement>
-            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
