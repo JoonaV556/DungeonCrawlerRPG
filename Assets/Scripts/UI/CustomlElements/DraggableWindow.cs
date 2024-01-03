@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEditor.Rendering.FilterWindow;
 
+/// <summary>
+/// Generic runtime window which can be dragged around the screen
+/// </summary>
 public class DraggableWindow : VisualElement
 {
     // Stylesheet: Window
