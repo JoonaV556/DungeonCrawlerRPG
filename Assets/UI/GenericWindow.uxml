@@ -4,8 +4,17 @@
     <Style src="project://database/Assets/UI/TestHUD.uss?fileID=7433441132597879392&amp;guid=0a4667f8b17952a4a909e943d3b2d924&amp;type=3#TestHUD" />
     <ui:VisualElement name="Root" class="root">
         <ui:VisualElement name="Window" class="window">
-            <ui:VisualElement name="Header" class="window-header" />
-            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);" />
+            <ui:VisualElement name="Header" class="window-header">
+                <ui:VisualElement name="HeaderLeft" class="header-left" />
+                <ui:VisualElement name="HeaderRight" class="header-right" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);">
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

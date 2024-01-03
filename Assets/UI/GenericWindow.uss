@@ -5,10 +5,10 @@
 .window-header {
     flex-direction: row;
     min-width: 90px;
-    max-height: 30px;
     min-height: 30px;
-    justify-content: space-between;
     background-color: rgb(67, 67, 67);
+    max-height: 30px;
+    justify-content: space-between;
 }
 
 .window-content {
@@ -65,4 +65,12 @@
     margin-right: 0;
     margin-bottom: 0;
     margin-left: 0;
+}
+
+.header-right {
+    flex-direction: row-reverse;
+}
+
+.header-left {
+    flex-direction: row;
 }
