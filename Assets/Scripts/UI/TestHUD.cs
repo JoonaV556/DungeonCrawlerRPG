@@ -12,11 +12,19 @@ public class TestHUD : ConstructUI {
     [SerializeField]
     private StyleSheet slotStyle;
 
+    [SerializeField]
+    private StyleSheet[] styleSheets;
+
     private CloseWindowButton closeButton;
-    private Window window;
+    private DraggableWindow window;
 
     protected override void Construct() {
         RootElement.AddToClassList("root");
+        RootElement.AddToClassList("droppable");
+
+        foreach (var style in styleSheets) {
+            RootElement.styleSheets.Add(style);
+        }
 
         // test creating a window
         TestWindow();
@@ -24,7 +32,7 @@ public class TestHUD : ConstructUI {
 
     private void TestWindow() {
         // Create parent window
-        window = UIShortcuts.CreateVisualElement<Window>(RootElement);
+        window = UIShortcuts.CreateVisualElement<DraggableWindow>(RootElement);
         window.styleSheets.Add(windowStyle);
 
         // Test adding content to the window
@@ -33,13 +41,5 @@ public class TestHUD : ConstructUI {
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
-
-        // Create the close button
-        closeButton = UIShortcuts.CreateVisualElement<CloseWindowButton>(window.header);
-        // Assign the window to close
-        closeButton.ElementToClose = window;
-        // Style the button
-        closeButton.styleSheets.Add(closeBtnStyle);
-        closeButton.text = "X";
     }
 }

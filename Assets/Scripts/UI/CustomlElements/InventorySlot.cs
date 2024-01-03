@@ -115,4 +115,6 @@ public class InventorySlot : VisualElement {
             childItem.style.backgroundImage = null;
         }
     }
+
+    public new class UxmlFactory : UxmlFactory<InventorySlot> { }
 }

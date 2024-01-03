@@ -11,7 +11,7 @@ public class CloseWindowButton : Button
     /// <summary>
     /// The visual element to hide when the button is clicked. The button won't work if this is not assigned
     /// </summary>
-    public VisualElement ElementToClose;
+    public VisualElement CloseTarget;
 
     public new class UxmlFactory : UxmlFactory<CloseWindowButton> { }
 
@@ -24,6 +24,6 @@ public class CloseWindowButton : Button
     }
 
     private void OnClicked() {
-        UIShortcuts.HideElement(ElementToClose);
+        UIShortcuts.HideElement(CloseTarget);
     }
 }

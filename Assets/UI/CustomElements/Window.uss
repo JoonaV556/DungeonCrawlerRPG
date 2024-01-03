@@ -1,5 +1,5 @@
 .window {
-    align-self: auto;
+    position: absolute;
 }
 
 .window-header {
@@ -13,10 +13,6 @@
 
 .window-content {
     background-color: rgb(159, 159, 159);
-}
-
-.window-header-left {
-    flex-direction: row;
 }
 
 .window-header-label {
