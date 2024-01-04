@@ -37,6 +37,7 @@ public class DraggableWindow : VisualElement
 
         // Add drag manipulator
         dragManipulator = new DragManipulator();
+        dragManipulator.BringToFrontWhileDragging = true;
         this.AddManipulator(dragManipulator);
         // Print debug info when dropped
         RegisterCallback<DropEvent>(evt => Debug.Log($"{evt.target} dropped on {evt.droppable}"));

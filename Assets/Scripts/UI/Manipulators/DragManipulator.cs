@@ -131,7 +131,10 @@ public class DragManipulator : IManipulator {
 
     #region Properties
 
-    private VisualElement _target;
+    /// <summary>
+    /// Should the target element be rendered on top of other elements on the same parent when drag starts?
+    /// </summary>
+    public bool BringToFrontWhileDragging = false;
 
     public VisualElement target {
         get => _target;
@@ -157,6 +160,19 @@ public class DragManipulator : IManipulator {
         }
     }
 
+    public string droppableId {
+        get => _droppableId;
+        init => _droppableId = value;
+    }
+    /** This manipulator can be disabled. */
+    public bool enabled { get; set; } = true;
+
+    public string removeClassOnDrag {
+        get => _removeClassOnDrag;
+        init => _removeClassOnDrag = value;
+    }
+
+    private VisualElement _target;
     protected static readonly CustomStyleProperty<bool> draggableEnabledProperty
       = new CustomStyleProperty<bool>("--draggable-enabled");
     protected Vector3 offset;
@@ -165,20 +181,10 @@ public class DragManipulator : IManipulator {
     private string _droppableId = "droppable";
     /** This is the USS class that is determines whether the target can be dropped
         on it. It is "droppable" by default. */
-    public string droppableId {
-        get => _droppableId;
-        init => _droppableId = value;
-    }
-    /** This manipulator can be disabled. */
-    public bool enabled { get; set; } = true;
     private PickingMode lastPickingMode;
     private string _removeClassOnDrag;
     /** Optional. Remove the given class from the target element during the drag.
         If removed, replace when drag ends. */
-    public string removeClassOnDrag {
-        get => _removeClassOnDrag;
-        init => _removeClassOnDrag = value;
-    }
     private bool removedClass = false;
 
     #endregion
@@ -189,8 +195,11 @@ public class DragManipulator : IManipulator {
     }
 
     private void DragBegin(PointerDownEvent ev) {
+        // Cancel dragging if the manipulator is not enabled
         if (!enabled)
             return;
+
+        // Begin dragging 
         target.AddToClassList("draggable--dragging");
 
         if (removeClassOnDrag != null) {
@@ -204,6 +213,11 @@ public class DragManipulator : IManipulator {
         isDragging = true;
         offset = ev.localPosition;
         target.CapturePointer(ev.pointerId);
+        
+        // Bring the target to front so it is rendered on top of other elements on the parent
+        if (BringToFrontWhileDragging) {
+            target.BringToFront();
+        }
     }
 
     private void DragEnd(IPointerEvent ev) {
@@ -262,7 +276,8 @@ public class DragManipulator : IManipulator {
         // ChangeCoordinatesTo will not be correct unless you wait a tick. #hardwon
         // target.transform.position = position_parent - target.ChangeCoordinatesTo(newParent,
         //                                                                      Vector2.zero);
-        return target.schedule.Execute(() => {
+        return target.schedule.Execute(() =>
+        {
             var newPosition = position_parent - target.ChangeCoordinatesTo(newParent,
                                                                            Vector2.zero);
             target.RemoveFromHierarchy();
@@ -295,12 +310,16 @@ public class DragManipulator : IManipulator {
     }
 
     private void PointerMove(PointerMoveEvent ev) {
+        // Cancel if the target is not being dragged
         if (!isDragging)
             return;
+        // Cancel if the dragger is not enabled
         if (!enabled) {
             DragEnd(ev);
             return;
         }
+
+        // Do the dragging
         Vector3 delta = ev.localPosition - (Vector3)offset;
         target.transform.position += delta;
         if (CanDrop(ev.position, out var droppable)) {
