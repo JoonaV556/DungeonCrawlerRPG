@@ -12,13 +12,12 @@ public class DraggableWindow : VisualElement
     // Stylesheet: Window
 
     protected VisualElement content;
-    private VisualElement headerLeft;
-    private VisualElement headerRight;
-    private CloseWindowButton closeWindowButton;
+    protected CloseWindowButton closeWindowButton;
 
 
     public VisualElement Header {  get; protected set; }
-    private DragManipulator dragManipulator;
+
+    protected DragManipulator dragManipulator;
 
     public DraggableWindow() {
         // Style the window
@@ -27,11 +26,9 @@ public class DraggableWindow : VisualElement
         // Create child elements
         Header = UIShortcuts.CreateVisualElement<VisualElement>(this, "window-header");
         content = UIShortcuts.CreateVisualElement<VisualElement>(this, "window-content");
-        headerLeft = UIShortcuts.CreateVisualElement<VisualElement>(Header, "header-left");
-        headerRight = UIShortcuts.CreateVisualElement<VisualElement>(Header, "header-right");
 
         // Create close button
-        closeWindowButton = UIShortcuts.CreateVisualElement<CloseWindowButton>(headerRight);
+        closeWindowButton = UIShortcuts.CreateVisualElement<CloseWindowButton>(Header);
         closeWindowButton.CloseTarget = this;
 
         // Register events
@@ -49,6 +46,10 @@ public class DraggableWindow : VisualElement
 
     public new class UxmlFactory : UxmlFactory<DraggableWindow> { }
 
+    /// <summary>
+    /// Adds visual elements to the content container
+    /// </summary>
+    /// <param name="elementToAdd">Element to add inside the content container</param>
     public void AddContent(VisualElement elementToAdd) {
         content.Add(elementToAdd);
     }

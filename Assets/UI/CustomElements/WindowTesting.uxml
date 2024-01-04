@@ -4,18 +4,9 @@
     <Style src="project://database/Assets/UI/TestHUD.uss?fileID=7433441132597879392&amp;guid=0a4667f8b17952a4a909e943d3b2d924&amp;type=3#TestHUD" />
     <Style src="project://database/Assets/UI/Styles.uss?fileID=7433441132597879392&amp;guid=f4114ffe1ec96544cabf8c917f67be87&amp;type=3#Styles" />
     <ui:VisualElement name="Root" class="root">
-        <ui:VisualElement name="Window" class="window">
-            <ui:VisualElement name="Header" class="window-header">
-                <ui:VisualElement name="HeaderLeft" class="header-left" />
-                <ui:VisualElement name="HeaderRight" class="header-right" />
-            </ui:VisualElement>
-            <ui:VisualElement name="Content" class="window-content" style="background-color: rgb(132, 132, 132);">
-                <InventorySlot class="item-slot" />
-                <InventorySlot class="item-slot" />
-                <InventorySlot class="item-slot" />
-                <InventorySlot class="item-slot" />
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <DraggableWindow name="DraggableWindow" />
+        <WindowLabeled style="top: 50px; left: 1259px; height: 345px; width: 266px;" />
+        <DraggableWindow style="top: 88px; left: 701px;" />
+        <WindowLabelCentered style="top: 422px; left: 1135px; width: 754px; height: 410px;" />
+        <WindowWithIconAndLabel style="top: 411px; left: 563px; width: 248px; height: 186px;" />
     </ui:VisualElement>
 </ui:UXML>

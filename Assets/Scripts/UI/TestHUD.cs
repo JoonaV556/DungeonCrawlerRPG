@@ -6,13 +6,6 @@ using UnityEngine.UIElements;
 public class TestHUD : ConstructUI {
 
     [SerializeField]
-    private StyleSheet closeBtnStyle;
-    [SerializeField]
-    private StyleSheet windowStyle;
-    [SerializeField]
-    private StyleSheet slotStyle;
-
-    [SerializeField]
     private StyleSheet[] styleSheets;
 
     private CloseWindowButton closeButton;
@@ -33,10 +26,8 @@ public class TestHUD : ConstructUI {
     private void TestWindow() {
         // Create parent window
         window = UIShortcuts.CreateVisualElement<DraggableWindow>(RootElement);
-        window.styleSheets.Add(windowStyle);
 
         // Test adding content to the window
-        RootElement.styleSheets.Add(slotStyle);
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
         window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
