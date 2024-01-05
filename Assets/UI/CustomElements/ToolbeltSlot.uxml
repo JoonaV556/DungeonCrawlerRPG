@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+        <ui:VisualElement name="Header" class="slotHeader slotHeader-selected">
+            <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerNumber" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SlotContainer" class="slotContainer slotContainer-selected" />
+    </ui:VisualElement>
+</ui:UXML>

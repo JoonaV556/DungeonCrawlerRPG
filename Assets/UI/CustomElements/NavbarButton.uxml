@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="NavbarButton" class="navButton" style="position: absolute; left: 50%; top: 61%;">
+        <ui:VisualElement name="NavButtonImage" class="navButton-image" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/BodyArmor.png?fileID=21300000&amp;guid=d3011a3deaaa3ca43b848b58b61f2b7a&amp;type=3#BodyArmor&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>

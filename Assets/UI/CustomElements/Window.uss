@@ -35,12 +35,16 @@
 }
 
 .header-icon {
-    min-width: 25px;
-    min-height: 25px;
+    min-width: 26px;
+    min-height: 26px;
     width: 30px;
     height: 30px;
     background-color: rgb(0, 0, 0);
     margin-right: 4px;
+    padding-top: -8px;
+    padding-right: -8px;
+    padding-bottom: -8px;
+    padding-left: -8px;
 }
 
 .window-closeBtn--Container {

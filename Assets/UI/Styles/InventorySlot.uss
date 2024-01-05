@@ -4,10 +4,10 @@
     width: 30px;
     height: 30px;
     background-color: rgb(31, 31, 31);
-    border-left-color: rgb(94, 94, 94);
-    border-right-color: rgb(94, 94, 94);
-    border-top-color: rgb(94, 94, 94);
-    border-bottom-color: rgb(94, 94, 94);
+    border-left-color: rgb(91, 91, 91);
+    border-right-color: rgb(91, 91, 91);
+    border-top-color: rgb(91, 91, 91);
+    border-bottom-color: rgb(91, 91, 91);
     border-top-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;

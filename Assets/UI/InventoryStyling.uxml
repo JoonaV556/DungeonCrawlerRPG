@@ -1,16 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="ToolbeltSlot" src="project://database/Assets/UI/CustomElements/ToolbeltSlot.uxml?fileID=9197481963319205126&amp;guid=f72a8ac3b04fede47b93dbf93ed68582&amp;type=3#ToolbeltSlot" />
     <Style src="project://database/Assets/UI/Styles/InventoryWindow.uss?fileID=7433441132597879392&amp;guid=881a6d3b1d414354b8c8670d1cfd89fb&amp;type=3#InventoryWindow" />
     <Style src="project://database/Assets/UI/Styles/InventorySlot.uss?fileID=7433441132597879392&amp;guid=759beb64a25bb114094dc7dde23da81e&amp;type=3#InventorySlot" />
     <Style src="project://database/Assets/UI/Styles/InventoryItem.uss?fileID=7433441132597879392&amp;guid=b8f2ef3a6490e6e43b91260fb45c8d30&amp;type=3#InventoryItem" />
+    <Style src="project://database/Assets/UI/Styles/ToolbeltSlot.uss?fileID=7433441132597879392&amp;guid=f47f67e8d8bead6428c0040e3d354273&amp;type=3#ToolbeltSlot" />
+    <Style src="project://database/Assets/UI/Styles/Navbutton.uss?fileID=7433441132597879392&amp;guid=3283fbc537a642146acc1f4d30df9492&amp;type=3#Navbutton" />
+    <Style src="project://database/Assets/UI/CustomElements/Window.uss?fileID=7433441132597879392&amp;guid=6631e079d601fbe449b32059bf0b8c66&amp;type=3#Window" />
+    <Style src="project://database/Assets/UI/CustomElements/CloseWindowButton.uss?fileID=7433441132597879392&amp;guid=eddf15d01fd7b834e817888011388ae8&amp;type=3#CloseWindowButton" />
     <ui:VisualElement name="Root" class="root">
-        <ui:VisualElement name="SlotContainer" style="flex-grow: 1; flex-direction: row; position: absolute; left: 50%; top: 50%;">
-            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
-                <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
-                    <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
-                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
-            </ui:VisualElement>
+        <ui:VisualElement name="InvSlots" style="flex-grow: 1; flex-direction: row; position: absolute; left: 1100px; top: 370px;">
+            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;" />
             <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
                 <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0063.png?fileID=21300000&amp;guid=da4361e6d9cbb394e8ae4356c7be72e3&amp;type=3#tile_0063&apos;);">
                     <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
@@ -32,6 +31,56 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="NavBar" style="flex-grow: 1; position: absolute; left: 1805px; top: 1014px; flex-direction: row;">
+            <ui:VisualElement name="NavbarButton" class="navButton">
+                <ui:VisualElement name="NavButtonImage" class="navButton-image" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/BodyArmor.png?fileID=21300000&amp;guid=d3011a3deaaa3ca43b848b58b61f2b7a&amp;type=3#BodyArmor&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="NavbarButton" class="navButton">
+                <ui:VisualElement name="NavButtonImage" class="navButton-image" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons3.png?fileID=21300000&amp;guid=1b90815033814234fa07e51e009a4022&amp;type=3#Btn_Icons3&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Toolbelt" style="flex-grow: 1; flex-direction: row; position: absolute; left: 872px; top: 967px;">
+            <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+                <ui:VisualElement name="Header" class="slotHeader">
+                    <ui:Label tabindex="-1" text="1&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerNumber" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SlotContainer" class="slotContainer" />
+            </ui:VisualElement>
+            <ui:Instance template="ToolbeltSlot" name="ToolbeltSlot" />
+            <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+                <ui:VisualElement name="Header" class="slotHeader">
+                    <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerNumber" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SlotContainer" class="slotContainer" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+                <ui:VisualElement name="Header" class="slotHeader">
+                    <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerNumber" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SlotContainer" class="slotContainer" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+                <ui:VisualElement name="Header" class="slotHeader">
+                    <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerNumber" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SlotContainer" class="slotContainer" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ToolbeltSlot" class="slotParent">
+                <ui:VisualElement name="Header" class="slotHeader">
+                    <ui:Label tabindex="-1" text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="headerNumber" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SlotContainer" class="slotContainer" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <WindowWithIconAndLabel style="top: 558px; left: 658px;" />
+        <ui:VisualElement name="MainInventory" class="window" style="position: absolute; left: 50%; top: 50%;">
+            <ui:VisualElement name="Header" class="window-header" style="flex-grow: 1;">
+                <CloseWindowButton focusable="true" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; width: 26px; height: 26px;" />
+                <ui:Label tabindex="-1" text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" class="window-header-label" style="-unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=35bfa91dd9c33784fa7691049f13adda&amp;type=3#NotInter-Regular&apos;);" />
+                <ui:VisualElement class="header-icon" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons3.png?fileID=21300000&amp;guid=1b90815033814234fa07e51e009a4022&amp;type=3#Btn_Icons3&apos;); background-color: rgba(0, 0, 0, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" class="window-content" style="flex-grow: 1;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
