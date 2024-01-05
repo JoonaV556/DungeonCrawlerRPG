@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/InventoryWindow.uss?fileID=7433441132597879392&amp;guid=881a6d3b1d414354b8c8670d1cfd89fb&amp;type=3#InventoryWindow" />
+    <Style src="project://database/Assets/UI/Styles/InventorySlot.uss?fileID=7433441132597879392&amp;guid=759beb64a25bb114094dc7dde23da81e&amp;type=3#InventorySlot" />
+    <Style src="project://database/Assets/UI/Styles/InventoryItem.uss?fileID=7433441132597879392&amp;guid=b8f2ef3a6490e6e43b91260fb45c8d30&amp;type=3#InventoryItem" />
+    <ui:VisualElement name="Root" class="root">
+        <ui:VisualElement name="SlotContainer" style="flex-grow: 1; flex-direction: row; position: absolute; left: 50%; top: 50%;">
+            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
+                <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                    <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
+                <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0063.png?fileID=21300000&amp;guid=da4361e6d9cbb394e8ae4356c7be72e3&amp;type=3#tile_0063&apos;);">
+                    <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
+                <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                    <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;">
+                <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                    <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
