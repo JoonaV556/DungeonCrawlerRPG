@@ -1,3 +1,9 @@
+/* Stylesheet template for a window which header has icon, label and Close button. 
+The icon and label are anchored to the left side of the header. 
+Required parent stylesheets:
+template_Window,
+*/
+
 .label-header {
     color: rgb(255, 255, 255);
     font-size: 22px;
@@ -34,3 +40,5 @@
     width: var(--headfoot-height);
     height: var(--headfoot-height);
 }
+
+

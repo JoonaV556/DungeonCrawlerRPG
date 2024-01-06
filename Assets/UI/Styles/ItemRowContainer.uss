@@ -1,0 +1,13 @@
+.row {
+    flex-direction: row;
+}
+
+.container {
+}
+
+.item {
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+}

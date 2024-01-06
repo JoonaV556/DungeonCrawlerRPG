@@ -1,0 +1,49 @@
+:root {
+    --border-color: rgb(109, 109, 109);
+    --background-color: rgb(67, 67, 67);
+    --headfoot-height: 30px;
+}
+
+.headerButton {
+    width: var(--headfoot-height);
+    height: var(--headfoot-height);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-image: url('project://database/Assets/Sprites/Custom/Btn_Icons1.png?fileID=21300000&guid=bc97909c0ea07b743a6bfadeeb16085d&type=3#Btn_Icons1');
+}
+
+.header-leftSpacer {
+    width: var(--headfoot-height);
+    height: var(--headfoot-height);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.label-header {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    -unity-text-align: middle-left;
+    -unity-font-style: normal;
+    margin-top: 0;
+    margin-right: 9px;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}

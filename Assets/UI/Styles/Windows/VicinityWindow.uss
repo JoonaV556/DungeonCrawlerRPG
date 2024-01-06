@@ -1,0 +1,10 @@
+:root {
+    --border-color: rgb(109, 109, 109);
+    --background-color: rgba(46, 46, 46, 0.75);
+    --headfoot-height: 30px;
+}
+
+.item {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="VicinityWindow" class="window" style="position: absolute; left: 717px; top: 243px;">
+        <ui:VisualElement name="Header" class="header">
+            <ui:VisualElement class="header-leftSpacer" />
+            <ui:Label tabindex="-1" text="Vicinity" parse-escape-sequences="true" display-tooltip-when-elided="true" class="label-header" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerButton" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SecondHeader" class="secondHeader" />
+        <ui:VisualElement name="Content" class="content" />
+        <ui:VisualElement name="Footer" class="footer" />
+    </ui:VisualElement>
+</ui:UXML>

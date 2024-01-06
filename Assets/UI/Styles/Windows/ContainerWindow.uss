@@ -1,0 +1,38 @@
+:root {
+    --background-color: rgb(159, 133, 83);
+}
+
+.icon {
+    background-image: url('project://database/Assets/Sprites/Custom/TestSprite11.png?fileID=21300000&guid=5798ac230dd2280499cd8aabce54a037&type=3#TestSprite11');
+}
+
+.secondHeader {
+    display: flex;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.btn-takeAll {
+    background-image: url('project://database/Assets/Sprites/Custom/TakeAll.png?fileID=21300000&guid=70d4cce4802e92645be14984b0e30a5a&type=3#TakeAll');
+    border-color: var(--border-color);
+    width: 60px;
+    height: 30px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-color: rgb(65, 65, 65);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.content {
+}

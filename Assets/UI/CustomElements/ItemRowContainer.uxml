@@ -1,0 +1,152 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="ItemRowContainer" class="container">
+        <ui:VisualElement name="ItemRow" class="row">
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ItemRow" class="row">
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ItemRow" class="row">
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ItemRow" class="row">
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                    <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
