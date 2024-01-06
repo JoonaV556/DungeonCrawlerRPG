@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="InventoryWindow" class="window" style="flex-grow: 1; position: absolute; left: 50%; top: 50%; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px;">
+        <ui:VisualElement name="Header" class="header">
+            <ui:VisualElement name="HeaderLeft" class="headerLeft">
+                <ui:VisualElement name="Icon" class="icon" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons3.png?fileID=21300000&amp;guid=1b90815033814234fa07e51e009a4022&amp;type=3#Btn_Icons3&apos;);" />
+                <ui:Label tabindex="-1" text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WindowLabel" class="label-header" />
+            </ui:VisualElement>
+            <ui:VisualElement name="HeaderRight" class="headerRight">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerButton" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons1.png?fileID=21300000&amp;guid=bc97909c0ea07b743a6bfadeeb16085d&amp;type=3#Btn_Icons1&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Content" class="content" />
+        <ui:VisualElement name="Footer" class="footer">
+            <ui:VisualElement name="Weight" class="footer-weight">
+                <ui:Label tabindex="-1" text="55kg" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt_CurrentWeight" class="label-weight label-currentWeight" />
+                <ui:Label tabindex="-1" text="/ 60kg" parse-escape-sequences="true" display-tooltip-when-elided="false" name="txt_MaxWeight" class="label-weight" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

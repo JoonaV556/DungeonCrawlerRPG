@@ -1,0 +1,42 @@
+:root {
+    --border-color: rgb(109, 109, 109);
+    --background-color: rgb(67, 67, 67);
+    --headfoot-height: 30px;
+}
+
+.window {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.header {
+    height: var(--headfoot-height);
+    min-width: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.secondHeader {
+    flex-direction: row;
+    display: none;
+}
+
+.footer {
+    flex-direction: row;
+    align-items: center;
+    display: none;
+}
+
+.content {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    align-items: flex-start;
+}

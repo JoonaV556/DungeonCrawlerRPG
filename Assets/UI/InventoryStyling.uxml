@@ -1,12 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="ToolbeltSlot" src="project://database/Assets/UI/CustomElements/ToolbeltSlot.uxml?fileID=9197481963319205126&amp;guid=f72a8ac3b04fede47b93dbf93ed68582&amp;type=3#ToolbeltSlot" />
-    <Style src="project://database/Assets/UI/Styles/InventoryWindow.uss?fileID=7433441132597879392&amp;guid=881a6d3b1d414354b8c8670d1cfd89fb&amp;type=3#InventoryWindow" />
+    <Style src="project://database/Assets/UI/Styles/InventoryScreen.uss?fileID=7433441132597879392&amp;guid=881a6d3b1d414354b8c8670d1cfd89fb&amp;type=3#InventoryScreen" />
     <Style src="project://database/Assets/UI/Styles/InventorySlot.uss?fileID=7433441132597879392&amp;guid=759beb64a25bb114094dc7dde23da81e&amp;type=3#InventorySlot" />
     <Style src="project://database/Assets/UI/Styles/InventoryItem.uss?fileID=7433441132597879392&amp;guid=b8f2ef3a6490e6e43b91260fb45c8d30&amp;type=3#InventoryItem" />
     <Style src="project://database/Assets/UI/Styles/ToolbeltSlot.uss?fileID=7433441132597879392&amp;guid=f47f67e8d8bead6428c0040e3d354273&amp;type=3#ToolbeltSlot" />
     <Style src="project://database/Assets/UI/Styles/Navbutton.uss?fileID=7433441132597879392&amp;guid=3283fbc537a642146acc1f4d30df9492&amp;type=3#Navbutton" />
-    <Style src="project://database/Assets/UI/CustomElements/Window.uss?fileID=7433441132597879392&amp;guid=6631e079d601fbe449b32059bf0b8c66&amp;type=3#Window" />
-    <Style src="project://database/Assets/UI/CustomElements/CloseWindowButton.uss?fileID=7433441132597879392&amp;guid=eddf15d01fd7b834e817888011388ae8&amp;type=3#CloseWindowButton" />
+    <Style src="project://database/Assets/UI/Styles/Window.uss?fileID=7433441132597879392&amp;guid=6631e079d601fbe449b32059bf0b8c66&amp;type=3#Window" />
+    <Style src="project://database/Assets/UI/Styles/CloseWindowButton.uss?fileID=7433441132597879392&amp;guid=eddf15d01fd7b834e817888011388ae8&amp;type=3#CloseWindowButton" />
+    <Style src="project://database/Assets/UI/Styles/InventoryWindow.uss?fileID=7433441132597879392&amp;guid=02b174d9d504df64ba71b948c87b2ea1&amp;type=3#InventoryWindow" />
     <ui:VisualElement name="Root" class="root">
         <ui:VisualElement name="InvSlots" style="flex-grow: 1; flex-direction: row; position: absolute; left: 1100px; top: 370px;">
             <ui:VisualElement name="InvSlot" class="invSlot" style="flex-grow: 1;" />
@@ -74,13 +75,23 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <WindowWithIconAndLabel style="top: 558px; left: 658px;" />
-        <ui:VisualElement name="MainInventory" class="window" style="position: absolute; left: 50%; top: 50%;">
-            <ui:VisualElement name="Header" class="window-header" style="flex-grow: 1;">
-                <CloseWindowButton focusable="true" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; width: 26px; height: 26px;" />
-                <ui:Label tabindex="-1" text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" class="window-header-label" style="-unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=35bfa91dd9c33784fa7691049f13adda&amp;type=3#NotInter-Regular&apos;);" />
-                <ui:VisualElement class="header-icon" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons3.png?fileID=21300000&amp;guid=1b90815033814234fa07e51e009a4022&amp;type=3#Btn_Icons3&apos;); background-color: rgba(0, 0, 0, 0);" />
+        <ui:VisualElement name="InventoryWindow" class="inventoryWindow" style="flex-grow: 1; position: absolute; left: 50%; top: 50%; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px;">
+            <ui:VisualElement name="Header" class="header">
+                <ui:VisualElement name="HeaderLeft" class="headerLeft">
+                    <ui:VisualElement name="Icon" class="icon" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons3.png?fileID=21300000&amp;guid=1b90815033814234fa07e51e009a4022&amp;type=3#Btn_Icons3&apos;);" />
+                    <ui:Label tabindex="-1" text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WindowLabel" class="label-header" />
+                </ui:VisualElement>
+                <ui:VisualElement name="HeaderRight" class="headerRight">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="headerButton" style="background-image: url(&apos;project://database/Assets/Sprites/Custom/Btn_Icons1.png?fileID=21300000&amp;guid=bc97909c0ea07b743a6bfadeeb16085d&amp;type=3#Btn_Icons1&apos;);" />
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Content" class="window-content" style="flex-grow: 1;" />
+            <ui:VisualElement name="Content" class="content" />
+            <ui:VisualElement name="Footer" class="footer">
+                <ui:VisualElement name="Weight" class="footer-weight">
+                    <ui:Label tabindex="-1" text="55kg" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt_CurrentWeight" class="label-weight label-currentWeight" />
+                    <ui:Label tabindex="-1" text="/ 60kg" parse-escape-sequences="true" display-tooltip-when-elided="false" name="txt_MaxWeight" class="label-weight" />
+                </ui:VisualElement>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

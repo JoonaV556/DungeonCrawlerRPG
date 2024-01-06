@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="Window" class="window" style="flex-grow: 1; position: absolute; left: 717px; top: 243px; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px;">
+        <ui:VisualElement name="Header" class="header" />
+        <ui:VisualElement name="SecondHeader" class="secondHeader" />
+        <ui:VisualElement name="Content" class="content" />
+        <ui:VisualElement name="Footer" class="footer" />
+    </ui:VisualElement>
+</ui:UXML>
