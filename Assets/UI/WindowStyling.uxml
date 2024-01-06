@@ -5,7 +5,7 @@
     <Style src="project://database/Assets/UI/Styles/Windows/EquipmentWindow.uss?fileID=7433441132597879392&amp;guid=1cccc5d8ad832ba4bb7fdc4f4421fe5a&amp;type=3#EquipmentWindow" />
     <Style src="project://database/Assets/UI/Styles/InventorySlot.uss?fileID=7433441132597879392&amp;guid=759beb64a25bb114094dc7dde23da81e&amp;type=3#InventorySlot" />
     <ui:VisualElement name="Root" class="root">
-        <ui:VisualElement name="EquipmentWindow" class="window" style="flex-grow: 1; position: absolute; left: 695px; top: 270px;">
+        <ui:VisualElement name="EquipmentWindow" class="window" style="flex-grow: 1; position: absolute; left: 233px; top: 130px;">
             <ui:VisualElement name="Header" class="header">
                 <ui:VisualElement name="HeaderLeft" class="headerLeft">
                     <ui:VisualElement name="Icon" class="icon" />

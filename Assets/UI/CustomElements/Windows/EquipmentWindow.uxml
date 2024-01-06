@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="EquipmentWindow" class="window" style="flex-grow: 1; position: absolute; left: 695px; top: 270px;">
+        <ui:VisualElement name="Header" class="header">
+            <ui:VisualElement name="HeaderLeft" class="headerLeft">
+                <ui:VisualElement name="Icon" class="icon" />
+                <ui:Label tabindex="-1" text="Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WindowLabel" class="label-header" />
+            </ui:VisualElement>
+            <ui:VisualElement name="HeaderRight" class="headerRight">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseButton" class="headerButton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="SecondHeader" class="secondHeader" />
+        <ui:VisualElement name="Content" class="content">
+            <ui:VisualElement name="EquipmentContainer" class="equipmentContainer">
+                <ui:VisualElement name="CharacterImage" class="characterImage" />
+                <ui:VisualElement name="EquipmentSlots" class="equipmentSlots">
+                    <ui:VisualElement name="Row" class="slotRow">
+                        <ui:VisualElement name="InventorySlot" class="invSlot slot-head">
+                            <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Row" class="slotRow">
+                        <ui:VisualElement name="InventorySlot" class="invSlot slot-torso">
+                            <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="InventorySlot" class="invSlot slot-gloves">
+                            <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Row" class="slotRow">
+                        <ui:VisualElement name="InventorySlot" class="invSlot slot-legs">
+                            <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Row" class="slotRow">
+                        <ui:VisualElement name="InventorySlot" class="invSlot slot-feet">
+                            <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Footer" class="footer" />
+    </ui:VisualElement>
+</ui:UXML>
