@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 /// <summary>
 /// Visual UI representation of an item inside an inventory slot. Every slot has an InventoryItem as its child regarldess of the slot actually having an item in it
 /// </summary>
-public class InventoryItem : VisualElement
+public class InventoryItemUI : VisualElement
 {
     /// <summary>
     /// Black background behind the stack size number
@@ -22,10 +22,10 @@ public class InventoryItem : VisualElement
     public float sizeY { get; private set; } // InventoryItems approximate width on screen in pixels
 
     // Factory for UIBuilder compatibility
-    public new class UxmlFactory : UxmlFactory<InventoryItem> { }
+    public new class UxmlFactory : UxmlFactory<InventoryItemUI> { }
 
     // Constructor
-    public InventoryItem() {
+    public InventoryItemUI() {
         // Create child members
         this.AddToClassList("item-image");
         stackSizeContainer = UIShortcuts.CreateVisualElement<VisualElement>(this, "item-stacksizeContainer");

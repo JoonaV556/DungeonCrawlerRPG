@@ -5,12 +5,12 @@ using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InventorySlot : VisualElement {
+public class InventorySlotUI : VisualElement {
 
     /// <summary>
     /// The visual reperesentation of an item in the slot. Slot always has one. When slot actually doesn't have an item innit, the childItem is just hidden
     /// </summary>
-    public InventoryItem childItem;
+    public InventoryItemUI childItem;
 
     /// <summary>
     /// Whether or not mouse is currently held down over this slot?
@@ -18,9 +18,9 @@ public class InventorySlot : VisualElement {
     private bool mouseDown = false;
 
     // Constructor
-    public InventorySlot() {
+    public InventorySlotUI() {
         // Create the childItem
-        childItem = UIShortcuts.CreateVisualElement<InventoryItem>(this);
+        childItem = UIShortcuts.CreateVisualElement<InventoryItemUI>(this);
         // Hide the childItem by default
         UIShortcuts.HideElement(childItem);
 
@@ -116,5 +116,5 @@ public class InventorySlot : VisualElement {
         }
     }
 
-    public new class UxmlFactory : UxmlFactory<InventorySlot> { }
+    public new class UxmlFactory : UxmlFactory<InventorySlotUI> { }
 }

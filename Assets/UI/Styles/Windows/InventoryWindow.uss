@@ -1,11 +1,11 @@
 :root {
-    --border-color: rgb(109, 109, 109);
-    --background-color: rgb(67, 67, 67);
+    --border-color: rgb(198, 198, 198);
+    --background-color: rgb(156, 131, 91);
     --headfoot-height: 30px;
 }
 
 .window {
-    background-color: var(--background-color);
+    background-color: rgb(137, 113, 76);
     border-color: var(--border-color);
     border-top-width: 2px;
     border-right-width: 2px;
@@ -60,6 +60,7 @@
 .icon {
     width: var(--headfoot-height);
     height: var(--headfoot-height);
+    background-image: url('project://database/Assets/Sprites/Custom/TestSprite11.png?fileID=21300000&guid=5798ac230dd2280499cd8aabce54a037&type=3#TestSprite11');
 }
 
 .content {

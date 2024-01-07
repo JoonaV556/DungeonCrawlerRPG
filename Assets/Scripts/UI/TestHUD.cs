@@ -28,9 +28,9 @@ public class TestHUD : ConstructUI {
         window = UIShortcuts.CreateVisualElement<DraggableWindow>(RootElement);
 
         // Test adding content to the window
-        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
-        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
-        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
-        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlot>(null, "item-slot"));
+        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlotUI>(null, "item-slot"));
+        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlotUI>(null, "item-slot"));
+        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlotUI>(null, "item-slot"));
+        window.AddContent(UIShortcuts.CreateVisualElement<InventorySlotUI>(null, "item-slot"));
     }
 }

@@ -1,4 +1,7 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/Windows/templates/template_Window.uss?fileID=7433441132597879392&amp;guid=bdba525811d1dbd409ca1403f7693a66&amp;type=3#template_Window" />
+    <Style src="project://database/Assets/UI/Styles/Windows/templates/template_Window_Type1.uss?fileID=7433441132597879392&amp;guid=e761a3c0085793748a68fcfb0d2c72da&amp;type=3#template_Window_Type1" />
+    <Style src="project://database/Assets/UI/Styles/Windows/InventoryWindow.uss?fileID=7433441132597879392&amp;guid=02b174d9d504df64ba71b948c87b2ea1&amp;type=3#InventoryWindow" />
     <ui:VisualElement name="ContainerWindow" class="window" style="flex-grow: 1; position: absolute; left: 717px; top: 243px;">
         <ui:VisualElement name="Header" class="header">
             <ui:VisualElement name="HeaderLeft" class="headerLeft">

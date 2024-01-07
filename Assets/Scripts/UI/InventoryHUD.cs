@@ -37,9 +37,9 @@ public class InventoryHUD : ConstructUI {
     #endregion
 
     private VisualElement InventoryContainer; // Background panel of the inventory
-    private InventoryItem ghostItem;
-    private InventorySlot dropSlot = null; // Slot into which dragged item is dropped, if one exists
-    private InventorySlot oldSlot = null; // Slot form which the item is being dragged from
+    private InventoryItemUI ghostItem;
+    private InventorySlotUI dropSlot = null; // Slot into which dragged item is dropped, if one exists
+    private InventorySlotUI oldSlot = null; // Slot form which the item is being dragged from
 
     private bool CanOpenInventory = false;
     private bool dragging;
@@ -66,7 +66,7 @@ public class InventoryHUD : ConstructUI {
         CreateInventorySlots();
 
         // Create Ghostitem
-        ghostItem = UIShortcuts.CreateVisualElement<InventoryItem>(RootElement, "item-ghostItem");
+        ghostItem = UIShortcuts.CreateVisualElement<InventoryItemUI>(RootElement, "item-ghostItem");
         // Hide ghostitem at start
         UIShortcuts.DisableVisibility(ghostItem);
         // Make ghostItem not react to mouse events (CRITICAL for slot detection)
@@ -102,14 +102,14 @@ public class InventoryHUD : ConstructUI {
     private void CreateInventorySlots() {
         for (int i = 1; i <= InventorySlotAmount; i++) {
             // Create slot
-            InventorySlot newSlot = UIShortcuts.CreateVisualElement<InventorySlot>(InventoryContainer, "item-slot");
+            InventorySlotUI newSlot = UIShortcuts.CreateVisualElement<InventorySlotUI>(InventoryContainer, "item-slot");
             if (i == 2) {
                 AddItemToSlot(newSlot);
             }
         }
     }
 
-    public void StartDrag(InventorySlot startSlot, Background itemSprite) {
+    public void StartDrag(InventorySlotUI startSlot, Background itemSprite) {
         // Store the slot from which the item is being dragged from
         oldSlot = startSlot;
         // Enable ghostItem
@@ -121,7 +121,7 @@ public class InventoryHUD : ConstructUI {
 
     private void EndDrag() {
         // Check if item can be dropped in a slot
-        if (CanDropInSlot(out InventorySlot slot)) {
+        if (CanDropInSlot(out InventorySlotUI slot)) {
             // Remove the item from the old slot
             oldSlot.ClearItem();
             // Drop item into the new slot
@@ -145,7 +145,7 @@ public class InventoryHUD : ConstructUI {
     }
 
     // Checks if there's a slot into which the item can be dropped into
-    private bool CanDropInSlot(out InventorySlot slot) {
+    private bool CanDropInSlot(out InventorySlotUI slot) {
         // Return false if no slot exists
         if (dropSlot == null) {
             slot = null;
@@ -164,13 +164,13 @@ public class InventoryHUD : ConstructUI {
     }
 
     // Drops the dragged item into a slot
-    private void DropItemInSlot(InventorySlot slot) {
+    private void DropItemInSlot(InventorySlotUI slot) {
         // Testing drop behavior: 
         slot.SetItem(testSprite);
     }
 
     // Triggered when cursor moves over an inventory slot
-    public void OnCursorEnterSlot(InventorySlot slot) {
+    public void OnCursorEnterSlot(InventorySlotUI slot) {
         if (dragging) {
             dropSlot = slot;
             // print("Got dropSlot");
@@ -178,7 +178,7 @@ public class InventoryHUD : ConstructUI {
     }
 
     // Triggered when cursor moves out of an inventory slot
-    public void OnCursorLeaveSlot(InventorySlot slot) {
+    public void OnCursorLeaveSlot(InventorySlotUI slot) {
         if (slot == dropSlot) {
             dropSlot = null;
             //print("Lost dropSlot");
@@ -260,7 +260,7 @@ public class InventoryHUD : ConstructUI {
 
     #region Debug
     // Testing only -- Add some test items to item slots
-    private void AddItemToSlot(InventorySlot slot) {
+    private void AddItemToSlot(InventorySlotUI slot) {
         UIShortcuts.ShowElement(slot.childItem);
         slot.childItem.style.backgroundImage = testSprite;
     }
