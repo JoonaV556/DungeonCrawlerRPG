@@ -1,0 +1,52 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/testing/InventoryScreen.uss?fileID=7433441132597879392&amp;guid=881a6d3b1d414354b8c8670d1cfd89fb&amp;type=3#InventoryScreen" />
+    <Style src="project://database/Assets/UI/Styles/Windows/templates/template_Window.uss?fileID=7433441132597879392&amp;guid=bdba525811d1dbd409ca1403f7693a66&amp;type=3#template_Window" />
+    <Style src="project://database/Assets/UI/Styles/Windows/templates/template_Window_Type1.uss?fileID=7433441132597879392&amp;guid=e761a3c0085793748a68fcfb0d2c72da&amp;type=3#template_Window_Type1" />
+    <Style src="project://database/Assets/UI/Styles/InventorySlot.uss?fileID=7433441132597879392&amp;guid=759beb64a25bb114094dc7dde23da81e&amp;type=3#InventorySlot" />
+    <Style src="project://database/Assets/UI/Styles/InventoryItem.uss?fileID=7433441132597879392&amp;guid=b8f2ef3a6490e6e43b91260fb45c8d30&amp;type=3#InventoryItem" />
+    <Style src="project://database/Assets/UI/Styles/Windows/ItemDetailsWindow.uss?fileID=7433441132597879392&amp;guid=e9e134f5ecea67249a6e43192f601321&amp;type=3#ItemDetailsWindow" />
+    <ui:VisualElement name="Root" class="root">
+        <ui:VisualElement name="ItemDetailsWindow" class="window" style="position: absolute; left: 821px; top: 493px;">
+            <ui:VisualElement name="Header" class="header">
+                <ui:VisualElement name="HeaderLeft" class="headerLeft" />
+                <ui:VisualElement name="HeaderRight" class="headerRight">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseButton" class="headerButton" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="SecondHeader" class="secondHeader" />
+            <ui:VisualElement name="Content" class="content">
+                <ui:VisualElement name="ItemHeader" class="itemHeader">
+                    <ui:VisualElement name="ItemIcon" class="invSlot">
+                        <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
+                            <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
+                                <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="SlotOverlay" class="slotOverlay" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="NameDesc" class="nameDesc">
+                        <ui:Label tabindex="-1" text="Example Item" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="labelName" />
+                        <ui:Label tabindex="-1" text="My name jeff." parse-escape-sequences="false" display-tooltip-when-elided="true" name="Desc" enable-rich-text="true" class="labelDesc" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ItemDetails" class="itemDetails">
+                    <ui:VisualElement name="Labels" class="detailLabels">
+                        <ui:Label tabindex="-1" text="Type" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Type" class="detailText detailLabel" />
+                        <ui:Label tabindex="-1" text="Stack Size" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StackSize" class="detailText detailLabel" />
+                        <ui:Label tabindex="-1" text="Weight" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Weight" class="detailText detailLabel" />
+                        <ui:Label tabindex="-1" text="single" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeightSingle" enable-rich-text="true" class="detailText detailLabel text-intend" />
+                        <ui:Label tabindex="-1" text="stack" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeightStack" class="detailText detailLabel text-intend" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Values" style="flex-grow: 1;">
+                        <ui:Label tabindex="-1" text="Consumable" parse-escape-sequences="true" display-tooltip-when-elided="true" name="value_Type" class="detailText detailValue" />
+                        <ui:Label tabindex="-1" text="x65" parse-escape-sequences="true" display-tooltip-when-elided="true" name="value_Type" class="detailText detailValue" />
+                        <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeightHidden" class="detailText detailValue value-hidden" />
+                        <ui:Label tabindex="-1" text="0.5kg" parse-escape-sequences="true" display-tooltip-when-elided="true" name="value_WeightStack" class="detailText detailValue" />
+                        <ui:Label tabindex="-1" text="65kg" display-tooltip-when-elided="true" name="value_WeightSingle" class="detailText detailValue" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Footer" class="footer" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

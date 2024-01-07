@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI/Styles/InventoryItem.uss?fileID=7433441132597879392&amp;guid=b8f2ef3a6490e6e43b91260fb45c8d30&amp;type=3#InventoryItem" />
     <ui:VisualElement name="Item" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Tiny%20Dungeon/Tiles/tile_0059.png?fileID=21300000&amp;guid=71fac81a8f48f224fbd96649a4e5a35c&amp;type=3#tile_0059&apos;);">
         <ui:VisualElement name="Backg-StackSize" class="backg-stacksize">
-            <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" style="font-size: 19px;" />
+            <ui:Label tabindex="-1" text="65" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text-stackSize" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

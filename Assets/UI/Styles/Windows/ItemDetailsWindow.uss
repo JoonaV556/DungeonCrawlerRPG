@@ -1,0 +1,110 @@
+:root {
+    --background-color: rgba(29, 71, 115, 0.85);
+    --border-color: rgb(109, 109, 109);
+}
+
+.window {
+    max-width: 200px;
+}
+
+.itemHeader {
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.labelName {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: upper-right;
+}
+
+.labelDesc {
+    color: rgb(221, 221, 221);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: upper-right;
+    font-size: 7px;
+    white-space: normal;
+}
+
+.invSlot {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.nameDesc {
+    margin-right: 3px;
+}
+
+.text-stackSize {
+    font-size: 8px;
+}
+
+.itemDetails {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.detailLabels {
+    border-right-width: 1px;
+    border-color: var(--border-color);
+    padding-right: 3px;
+}
+
+.detailText {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    font-size: 9px;
+    -unity-font-style: normal;
+    color: rgb(255, 255, 255);
+    letter-spacing: -3px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    white-space: nowrap;
+}
+
+.detailLabel {
+    -unity-text-align: upper-left;
+}
+
+.detailValue {
+    -unity-text-align: upper-right;
+    -unity-font-style: bold;
+}
+
+.value-hidden {
+    color: rgba(255, 255, 255, 0);
+}
+
+.text-intend {
+    padding-left: 8px;
+}
